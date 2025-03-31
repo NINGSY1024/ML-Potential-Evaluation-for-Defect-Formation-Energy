@@ -1,0 +1,1941 @@
+ 
+ 
+            \\\///         
+           / _  _ \         Hey, you must know what you are doing.
+         (| (o)(o) |)       Otherwise you might get wrong results.
+ o-----.OOOo--()--oOOO.------------------------------------------o
+ |         VASPKIT Standard Edition 1.4.0 (02 Nov. 2022)         |
+ |         Core Developer: Vei WANG (wangvei@icloud.com)         |
+ |      Main Contributors: Gang TANG, Nan XU & Jin-Cheng LIU     |
+ |  Online Tutorials Available on Website: https://vaspkit.com   |
+ o-----.oooO-----------------------------------------------------o
+        (   )   Oooo.                          VASPKIT Made Simple
+         \ (    (   )     
+          \_)    ) /      
+                (_/       
+ ===================== Structural Utilities ======================
+ 1)  VASP Input-Files Generator    2)  Mechanical Properties      
+ 3)  K-Path for Band-Structure     4)  Structure Editor           
+ 5)  Catalysis-ElectroChem Kit     6)  Symmetry Analysis          
+ 7)  Materials Databases           8)  Advanced Structure Models  
+ ===================== Electronic Utilities ======================
+ 11) Density-of-States             21) Band-Structure             
+ 23) 3D Band-Structure             25) Hybrid-DFT Band-Structure  
+ 26) Fermi-Surface                 28) Band-Structure Unfolding   
+ 31) Charge-Density Analysis       42) Potential Analysis         
+ 51) Wave-Function Analysis        62) Magnetic Properties        
+ 65) Spin-Texture                  68) Transport Properties       
+ ======================== Misc Utilities =========================
+ 71) Optical Properties            72) Molecular-Dynamics Kit     
+ 74) User Interface                78) VASP2other Interface       
+ 91) Semiconductor Kit             92) 2D-Material Kit            
+ 0)  Quit                                                         
+ ------------>>
+ -->> (01) Reading Structure from POSCAR File...
+ o-------------------------- Summary ----------------------------o
+ POTCAR Type: PBE
+ Number of Elements: 1
+ POTCAR File No.1: [ POTCAR_C ], Valence Electron: 4.0
+ Total Atoms: 62
+ Total Valence Electrons: 248.0
+ o---------------------------------------------------------------o
+ -->> (02) Written POTCAR File with the Recommended Potential!
+ o---------------------------------------------------------------o
+ |                       * ACKNOWLEDGMENTS *                     |
+ | Other Contributors (in no particular order): Peng-Fei LIU,    |
+ | Xue-Fei LIU, Dao-Xiong WU, Zhao-Fu ZHANG, Tian WANG, Qiang LI,|
+ | Ya-Chao LIU, Jiang-Shan ZHAO, Qi-Jing ZHENG, Yue QIU and You! |
+ | Advisors: Wen-Tong GENG, Yoshiyuki KAWAZOE                    |
+ :) Any Suggestions for Improvement are Welcome and Appreciated (:
+ |---------------------------------------------------------------|
+ |                          * CITATIONS *                        |
+ | When using VASPKIT in your research PLEASE cite the paper:    |
+ | [1] V. WANG, N. XU, J.-C. LIU, G. TANG, W.-T. GENG, VASPKIT: A|
+ | User-Friendly Interface Facilitating High-Throughput Computing|
+ | and Analysis Using VASP Code, Computer Physics Communications |
+ | 267, 108033, (2021), DOI: 10.1016/j.cpc.2021.108033           |
+ o---------------------------------------------------------------o
+ running on   48 total cores
+ distrk:  each k-point on   48 cores,    1 groups
+ distr:  one band on    8 cores,    6 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jan 12 2023 11:40:15) complex          
+  
+ POSCAR found type information on POSCAR  C 
+ POSCAR found :  1 types and      62 ions
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'large supercell' and for larger cells       |
+|      it might be more efficient to use real space projection opertators     |
+|      So try LREAL= Auto  in the INCAR   file.                               |
+|      Mind:          For very  accurate calculation you might also keep the  |
+|      reciprocal projection scheme          (i.e. LREAL=.FALSE.)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ generate k-points for:    5    5    1
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.292014909692E+04    0.29201E+04   -0.10097E+05 10380   0.133E+03
+DAV:   2     0.859820758144E+02   -0.28342E+04   -0.25892E+04 16476   0.249E+02
+DAV:   3    -0.544246934058E+03   -0.63023E+03   -0.62727E+03 13176   0.122E+02
+DAV:   4    -0.571139444846E+03   -0.26893E+02   -0.26741E+02 13164   0.327E+01
+DAV:   5    -0.571844541171E+03   -0.70510E+00   -0.70278E+00 14100   0.484E+00    0.492E+01
+DAV:   6    -0.403187040517E+03    0.16866E+03   -0.26737E+02 11520   0.298E+01    0.295E+01
+DAV:   7    -0.422651092889E+03   -0.19464E+02   -0.31690E+01 12036   0.113E+01    0.204E+01
+DAV:   8    -0.432932832658E+03   -0.10282E+02   -0.16945E+01 11616   0.854E+00    0.146E+01
+DAV:   9    -0.448714985055E+03   -0.15782E+02   -0.40971E+00 11436   0.505E+00    0.125E+01
+DAV:  10    -0.485792335770E+03   -0.37077E+02   -0.20625E+01 11184   0.931E+00    0.101E+01
+DAV:  11    -0.514373198253E+03   -0.28581E+02   -0.17052E+01 11340   0.771E+00    0.823E+00
+DAV:  12    -0.540375670642E+03   -0.26002E+02   -0.21185E+01 10680   0.742E+00    0.658E+00
+DAV:  13    -0.549200958655E+03   -0.88253E+01   -0.74554E+00 11340   0.409E+00    0.586E+00
+DAV:  14    -0.552244884015E+03   -0.30439E+01   -0.13938E+00 10956   0.229E+00    0.542E+00
+DAV:  15    -0.553587209740E+03   -0.13423E+01   -0.54829E-01 11172   0.168E+00    0.499E+00
+DAV:  16    -0.554494989771E+03   -0.90778E+00   -0.46996E-01 10764   0.153E+00    0.448E+00
+DAV:  17    -0.554860873183E+03   -0.36588E+00   -0.23556E-01 11184   0.122E+00    0.384E+00
+DAV:  18    -0.554709869147E+03    0.15100E+00   -0.52112E-01 10824   0.116E+00    0.271E+00
+DAV:  19    -0.557799317677E+03   -0.30894E+01   -0.38413E-01 11640   0.981E-01    0.186E+00
+DAV:  20    -0.557426368962E+03    0.37295E+00   -0.30914E-01 10596   0.929E-01    0.142E+00
+DAV:  21    -0.557352542987E+03    0.73826E-01   -0.33126E-01 10776   0.897E-01    0.848E-01
+DAV:  22    -0.557696011021E+03   -0.34347E+00   -0.94380E-02 10692   0.555E-01    0.435E-01
+DAV:  23    -0.557992200065E+03   -0.29619E+00   -0.18060E-02 11208   0.289E-01    0.216E-01
+DAV:  24    -0.558091866937E+03   -0.99667E-01   -0.50680E-03 10896   0.175E-01    0.104E-01
+DAV:  25    -0.558144066575E+03   -0.52200E-01   -0.14171E-03 10512   0.101E-01    0.687E-02
+DAV:  26    -0.558152529911E+03   -0.84633E-02   -0.13235E-03 10644   0.848E-02    0.523E-02
+DAV:  27    -0.558157089779E+03   -0.45599E-02   -0.12467E-03 10716   0.573E-02    0.559E-02
+DAV:  28    -0.558157513872E+03   -0.42409E-03   -0.71071E-05 11988   0.174E-02    0.588E-02
+DAV:  29    -0.558158117897E+03   -0.60403E-03   -0.15585E-04 10524   0.237E-02    0.645E-02
+DAV:  30    -0.558158138689E+03   -0.20792E-04   -0.21151E-03 10932   0.473E-02    0.596E-02
+DAV:  31    -0.558160135346E+03   -0.19967E-02   -0.20919E-03 10512   0.570E-02    0.403E-02
+DAV:  32    -0.558164555891E+03   -0.44205E-02   -0.25722E-04 10560   0.491E-02    0.203E-02
+DAV:  33    -0.558167024798E+03   -0.24689E-02   -0.37550E-04 11124   0.318E-02    0.983E-03
+DAV:  34    -0.558167621908E+03   -0.59711E-03   -0.10045E-04 11100   0.194E-02    0.806E-03
+DAV:  35    -0.558168226808E+03   -0.60490E-03   -0.14650E-05 10548   0.122E-02    0.686E-03
+DAV:  36    -0.558168630928E+03   -0.40412E-03   -0.22141E-05 10740   0.828E-03    0.233E-03
+DAV:  37    -0.558168780027E+03   -0.14910E-03   -0.35364E-06 10692   0.540E-03    0.164E-03
+DAV:  38    -0.558168937085E+03   -0.15706E-03   -0.23563E-06  9888   0.369E-03    0.109E-03
+DAV:  39    -0.558169018872E+03   -0.81787E-04   -0.16001E-06  9948   0.287E-03    0.708E-04
+DAV:  40    -0.558169047915E+03   -0.29043E-04   -0.39602E-07  9588   0.232E-03    0.553E-04
+DAV:  41    -0.558169068850E+03   -0.20935E-04   -0.24597E-07  9144   0.161E-03    0.236E-04
+DAV:  42    -0.558169075765E+03   -0.69143E-05   -0.47737E-08  8064   0.817E-04    0.160E-04
+DAV:  43    -0.558169081253E+03   -0.54883E-05   -0.23347E-08  7716   0.420E-04    0.101E-04
+DAV:  44    -0.558169085580E+03   -0.43275E-05   -0.12239E-08  7512   0.285E-04    0.736E-05
+DAV:  45    -0.558169087966E+03   -0.23858E-05   -0.17006E-09  7104   0.193E-04    0.430E-05
+DAV:  46    -0.558169089412E+03   -0.14454E-05   -0.86097E-10  7056   0.168E-04    0.320E-05
+DAV:  47    -0.558169090084E+03   -0.67246E-06    0.18114E-09  7164   0.101E-04    0.259E-05
+DAV:  48    -0.558169090367E+03   -0.28305E-06    0.28138E-09  7356   0.500E-05    0.106E-05
+DAV:  49    -0.558169090484E+03   -0.11671E-06    0.33126E-09  7248   0.299E-05    0.579E-06
+DAV:  50    -0.558169090561E+03   -0.77402E-07    0.34757E-09  7200   0.218E-05
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ augmentation electrons   248.024613233582     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ total        electrons   248.024613233582     
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ augmentation electrons  5.842033822070181E-013
+ soft         electrons  0.000000000000000E+000
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ total        electrons  5.842033822070181E-013
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ augmentation electrons   124.227993783652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ total        electrons   124.227993783652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ augmentation electrons   121.357890713652     
+ soft         electrons  0.000000000000000E+000
+ total        electrons   121.357890713652     
+ total        electrons   121.357890713652     
+ total        electrons   121.357890713652     
+ total        electrons   121.357890713652     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ augmentation electrons   5.89174883529957     
+ soft         electrons   242.132863657812     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ total        electrons   248.024612493112     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ augmentation electrons  1.638123701503550E-009
+ soft         electrons   242.132863657812     
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ total        electrons  5.784909613926383E-013
+ translations:           1           1           0
+ kE:  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+ E(k) -0.287495808583990     
+ dE/dx  1.202635550791684E-004  7.008441439077068E-005  6.385398226908525E-003
+ dE/dx -4.734550578264550E-004 -2.712028553809486E-004  5.101706950736001E-003
+ dE/dx  1.201505265932483E-004  6.990480457190406E-005 -6.384767955966409E-003
+ dE/dx -4.740976003014146E-004 -2.712600891320203E-004 -5.099500710562196E-003
+ dE/dx -5.668687039363341E-004  3.289056272002670E-004  6.122002185234293E-003
+ dE/dx -1.764862296153343E-006  5.426423785196379E-004  5.099921088653035E-003
+ dE/dx -5.650568889181407E-004  3.273076316977688E-004 -6.120661631516458E-003
+ dE/dx -2.003114840572650E-006  5.435669260339525E-004 -5.097915794986915E-003
+ dE/dx -2.375453662751737E-006 -1.346564920203641E-004  6.383161092662373E-003
+ dE/dx  7.067658913096177E-004 -1.598045862787418E-003  6.002490376925546E-003
+ dE/dx -2.402718873571317E-006 -1.349701588433475E-004 -6.382851002430618E-003
+ dE/dx  7.077567927533560E-004 -1.597232250829162E-003 -6.002950567934176E-003
+ dE/dx  1.467709782436687E-004 -8.359889288578004E-005  5.178545818499896E-003
+ dE/dx  1.734791490269376E-003  1.819322359135592E-004  6.004713731823342E-003
+ dE/dx  1.447227960623584E-004 -8.320214707544440E-005 -5.179731860020148E-003
+ dE/dx  1.735091463509803E-003  1.814418280397524E-004 -6.004969922965557E-003
+ dE/dx  7.990637282092681E-007 -6.571597846851766E-004  6.117396690448789E-003
+ dE/dx  4.676469091939117E-004 -2.708271399677745E-004  5.096465913704449E-003
+ dE/dx  8.169575344103899E-008 -6.548777619791479E-004 -6.116206704042332E-003
+ dE/dx  4.688507015954290E-004 -2.714357557416681E-004 -5.094598288992913E-003
+ dE/dx  5.712076283147638E-004  3.298750762477498E-004  6.115614788576583E-003
+ dE/dx -3.967423391300742E-003 -2.289382406602319E-003  1.870866554820907E-003
+ dE/dx  5.686822111179728E-004  3.289282179873397E-004 -6.114497327931231E-003
+ dE/dx -3.965577085977731E-003 -2.288387447269405E-003 -1.869324772237570E-003
+ dE/dx -1.284959181226277E-003  4.176658092447860E-003  3.494949826383259E-003
+ dE/dx  3.699382604285473E-003 -2.137883669969874E-003  2.252439979215037E-003
+ dE/dx -1.286183048841259E-003  4.176417178381167E-003 -3.497003966257654E-003
+ dE/dx  3.700082333324677E-003 -2.138282230119115E-003 -2.251697001378875E-003
+ dE/dx -4.260465055970125E-003 -9.699096553429326E-004  3.497142204086504E-003
+ dE/dx  2.308684108590215E-006  4.580987051615034E-003  1.875168515091131E-003
+ dE/dx -4.261145014891076E-003 -9.689823939562242E-004 -3.498849653030280E-003
+ dE/dx  2.550589737915979E-006  4.579176872492340E-003 -1.873738528588745E-003
+ dE/dx -1.181182448339103E-004  6.659457043756595E-005  6.379976418409115E-003
+ dE/dx -1.030262108525389E-003  1.413656949304867E-003  5.998138647271752E-003
+ dE/dx -1.186040755658508E-004  6.673516285853254E-005 -6.379886475003354E-003
+ dE/dx -1.028788257378924E-003  1.414202088755286E-003 -5.998742975081056E-003
+ dE/dx  2.971490776206490E-003 -3.201031939607679E-003  3.490869627282637E-003
+ dE/dx  5.506107691876635E-007  4.273446587338503E-003  2.252465803441810E-003
+ dE/dx  2.970674690202840E-003 -3.201913473100621E-003 -3.492708375052500E-003
+ dE/dx  6.246321714393281E-007  4.274079156493882E-003 -2.251807046908600E-003
+ dE/dx -3.703741787869897E-003 -2.135421541833342E-003  2.251200569507339E-003
+ dE/dx -3.703711030843880E-003 -2.135388206164680E-003 -2.250861582905326E-003
+ dE/dx  4.257253244065749E-003 -9.746808616015102E-004  3.491564694712441E-003
+ dE/dx -1.738295970590928E-003  1.886498618360514E-004  5.997647305552007E-003
+ dE/dx  4.257410121528428E-003 -9.737641110753358E-004 -3.493014431360734E-003
+ dE/dx -1.737838519061790E-003  1.879171719186827E-004 -5.998320923412426E-003
+ dE/dx  2.692257823368778E-006  1.653948548262556E-004  5.173867242856399E-003
+ dE/dx  1.029672310862665E-003  1.409759020861458E-003  6.005733392349701E-003
+ dE/dx  2.171702373493710E-006  1.632175575693908E-004 -5.175276700473855E-003
+ dE/dx  1.029358784124044E-003  1.410488191815635E-003 -6.005975279540909E-003
+ dE/dx -2.973439341788087E-003 -3.200728748151578E-003  3.496845400721569E-003
+ dE/dx  3.970071579470285E-003 -2.294046552894086E-003  1.886771782115946E-003
+ dE/dx -2.973032018037804E-003 -3.201837421126127E-003 -3.498457987987460E-003
+ dE/dx  3.968625625295073E-003 -2.292816876851461E-003 -1.885025072980625E-003
+ dE/dx  1.287597104056877E-003  4.175001319521182E-003  3.495214926493379E-003
+ dE/dx -7.032182685362525E-004 -1.600507625155758E-003  6.002958377086282E-003
+ dE/dx  1.288764868470718E-003  4.174613948917282E-003 -3.496734095973271E-003
+ dE/dx -7.040531008277449E-004 -1.599832812103551E-003 -6.003287597545199E-003
+ dE/dx -1.435308797745672E-004 -8.437290061414133E-005  5.170522376836560E-003
+ dE/dx -1.564080896978140E-006 -3.838860855716099E-007  6.593342556039042E-003
+ dE/dx -1.418712234884667E-004 -8.379429809430533E-005 -5.172097132738611E-003
+ dE/dx -1.015517187139499E-006  2.356845936129877E-007 -6.593641146530369E-003
+ sigma  0.112713408253812      -6.513398138957580E-002  1.055674985729731E-008
+ sigma  4.804998438984925E-005  0.130175639534627      -1.580184194574990E-008
+ sigma  1.215982529518547E-009 -1.602068156265142E-008  9.021304889934230E-003
+ kE:  0.200000000000000       3.789147325616833E-017 -2.481878210055887E-022
+ E(k) -0.262476619822155     
+ dE/dx -5.294418539576342E-004  4.842997931966194E-004  5.539458470659979E-003
+ dE/dx  4.905922438446913E-004 -4.926854266353324E-004  4.595163453983336E-003
+ dE/dx -5.295174429872473E-004  4.841357272547336E-004 -5.539135476077206E-003
+ dE/dx  4.899882901290685E-004 -4.925213971654399E-004 -4.593757226373422E-003
+ dE/dx -9.302034351627630E-004  5.385773572468846E-004  5.321679542221505E-003
+ dE/dx  6.715447666528069E-004 -1.817659215099342E-004  4.594274383346540E-003
+ dE/dx -9.286169717765343E-004  5.371700677863636E-004 -5.320956984042891E-003
+ dE/dx  6.711394966476003E-004 -1.810439230887592E-004 -4.592997303486781E-003
+ dE/dx -6.856205267596518E-004  2.209370902615290E-004  5.538446668828829E-003
+ dE/dx  1.025452339434739E-003 -1.503304497751361E-003  5.251220907895798E-003
+ dE/dx -6.856348691177603E-004  2.206539572868307E-004 -5.538319070962588E-003
+ dE/dx  1.026280526846923E-003 -1.502635014958311E-003 -5.251608716355102E-003
+ dE/dx -9.610069101074079E-004  5.564157168253117E-004  4.516061987463216E-003
+ dE/dx  1.812107107962726E-003 -1.408009123030722E-004  5.252637232119720E-003
+ dE/dx -9.627368218350172E-004  5.567141643009096E-004 -4.517051344780891E-003
+ dE/dx  1.812415286592561E-003 -1.411963743667736E-004 -5.252908460483409E-003
+ dE/dx -2.587882798415710E-004 -2.418148336313265E-004  5.973075608770014E-003
+ dE/dx  9.370160587260972E-004 -5.422018184432438E-004  5.176847054894490E-003
+ dE/dx -2.596737496888737E-004 -2.397248037629754E-004 -5.972532789537509E-003
+ dE/dx  9.379876036927419E-004 -5.426798062381743E-004 -5.175845172340614E-003
+ dE/dx  8.175351640275269E-005  3.471900085898639E-004  5.972001507162804E-003
+ dE/dx -2.649937944926859E-003 -2.657448065404612E-003  2.531879456228376E-003
+ dE/dx  7.930835747107295E-005  3.465178170518895E-004 -5.971515670845526E-003
+ dE/dx -2.648194728350489E-003 -2.656681271746787E-003 -2.530492887309159E-003
+ dE/dx -1.563874912423362E-003  3.531131199697288E-003  4.085788577787338E-003
+ dE/dx  3.632225980325770E-003 -2.099413494118655E-003  3.008483608363624E-003
+ dE/dx -1.565021487983617E-003  3.530875312283003E-003 -4.087491815222221E-003
+ dE/dx  3.632968720561348E-003 -2.099810859385558E-003 -3.007878869924076E-003
+ dE/dx -3.840180602450307E-003 -4.060926664406169E-004  4.087670039630485E-003
+ dE/dx  9.791636893596866E-004  3.623464670049973E-003  2.535234660763479E-003
+ dE/dx -3.840813245966258E-003 -4.052086980049019E-004 -4.089079115490862E-003
+ dE/dx  9.795400033927972E-004  3.621853210858947E-003 -2.533989984927719E-003
+ dE/dx -6.440757182243328E-004  3.707857177642518E-004  6.249802118910004E-003
+ dE/dx -4.763662161678882E-004  1.162229127323783E-003  5.968359101930465E-003
+ dE/dx -6.446183887165542E-004  3.709541230148591E-004 -6.249660815218504E-003
+ dE/dx -4.750458592386481E-004  1.162827617223729E-003 -5.968512082990205E-003
+ dE/dx  2.105378092339909E-003 -2.562627414389114E-003  4.091405662264329E-003
+ dE/dx -2.930242360974847E-004  3.609083861654151E-003  3.461055473373296E-003
+ dE/dx  2.104514753313165E-003 -2.563361007563767E-003 -4.092696941976999E-003
+ dE/dx -2.928087936189756E-004  3.609589913774555E-003 -3.460659701180446E-003
+ dE/dx -3.274270199038103E-003 -1.549388061326958E-003  3.460031506580886E-003
+ dE/dx -3.274108129377843E-003 -1.549428681407480E-003 -3.459933348707934E-003
+ dE/dx  3.271651304024789E-003 -5.431605048610932E-004  4.091946813787151E-003
+ dE/dx -1.244138627540289E-003 -1.659519097797917E-004  5.968120551068944E-003
+ dE/dx  3.271663500053545E-003 -5.422717521397171E-004 -4.092958105083142E-003
+ dE/dx -1.243828634163208E-003 -1.666499840344549E-004 -5.968402204724779E-003
+ dE/dx -6.913265804851973E-004  4.089037040233919E-004  4.832655915912381E-003
+ dE/dx  1.143096109154191E-003  6.367207822946967E-004  5.521444398613981E-003
+ dE/dx -6.917185438766513E-004  4.068998337982166E-004 -4.833506124843740E-003
+ dE/dx  1.142927997561380E-003  6.374391855429849E-004 -5.521375529117589E-003
+ dE/dx -3.288059471080493E-003 -2.812027839526321E-003  3.636543284131619E-003
+ dE/dx  4.449495443452038E-003 -2.571190696064486E-003  2.334329962699110E-003
+ dE/dx -3.287605965234980E-003 -2.812940899933598E-003 -3.637737899373431E-003
+ dE/dx  4.448330605671563E-003 -2.570124371229970E-003 -2.332576754095712E-003
+ dE/dx  7.937787909885202E-004  4.253657199070562E-003  3.635149433676269E-003
+ dE/dx  2.255038704750783E-005 -1.312613694340971E-003  5.519799372825529E-003
+ dE/dx  7.948010499929843E-004  4.253156534513693E-003 -3.636263605778237E-003
+ dE/dx  2.181559486030688E-005 -1.312110277966125E-003 -5.519790587009325E-003
+ dE/dx -7.010606474478098E-004  3.953133179531924E-004  4.830607473479344E-003
+ dE/dx  6.154707797598524E-004 -3.565070952978969E-004  5.788117704129924E-003
+ dE/dx -6.995116881931652E-004  3.957651985268205E-004 -4.831575617494347E-003
+ dE/dx  6.158754709882280E-004 -3.558762302769241E-004 -5.788081231428908E-003
+ sigma  9.382703281519937E-002 -5.421991670607795E-002  1.849959591297597E-007
+ sigma  2.793313867970138E-003  0.113127364344206      -1.047131764708006E-007
+ sigma  2.599447060286733E-008 -2.764966644902507E-008  9.490370435992860E-003
+ kE:  0.400000000000000       7.578294651233666E-017 -4.963756420111773E-022
+ E(k) -0.255350854820762     
+ dE/dx -3.142432531139508E-004  5.786903613524487E-004  5.399054319489354E-003
+ dE/dx  8.914914401357496E-004 -3.578245177794553E-004  4.636340164280818E-003
+ dE/dx -3.143659993329414E-004  5.784776829192097E-004 -5.398870635280900E-003
+ dE/dx  8.909504592478336E-004 -3.574550037108183E-004 -4.635622980069556E-003
+ dE/dx -1.002939133724186E-003  5.805815786264958E-004  5.203572164448845E-003
+ dE/dx  7.547189444043469E-004 -5.960143269246933E-004  4.636383310980279E-003
+ dE/dx -1.001433401449307E-003  5.792259636806186E-004 -5.203410980528929E-003
+ dE/dx  7.541722341987580E-004 -5.954956925475587E-004 -4.635731929315190E-003
+ dE/dx -6.598268698694179E-004 -1.288049974238029E-005  5.399217543926232E-003
+ dE/dx  1.149810347433599E-003 -8.889834278445456E-004  5.248212389263995E-003
+ dE/dx -6.598393306043508E-004 -1.304969320977830E-005 -5.399129019832744E-003
+ dE/dx  1.150578682751703E-003 -8.884235542276337E-004 -5.248481390398373E-003
+ dE/dx -1.314136497456414E-003  7.604133635600634E-004  4.350951588863825E-003
+ dE/dx  1.341964223807724E-003 -5.551871775264565E-004  5.248702694453058E-003
+ dE/dx -1.315805639402572E-003  7.606969766787763E-004 -4.351725422424068E-003
+ dE/dx  1.342342981592798E-003 -5.554945286750906E-004 -5.248947984120675E-003
+ dE/dx -6.579039117236716E-006  1.810088742565023E-004  6.285209362584908E-003
+ dE/dx  1.226750355759679E-003 -7.096657993749001E-004  5.525201002787380E-003
+ dE/dx -7.571306584682322E-006  1.830168974554638E-004 -6.285262276023038E-003
+ dE/dx  1.227643488453727E-003 -7.101019221133467E-004 -5.524947401297184E-003
+ dE/dx -1.588397366387309E-004 -8.240827231878135E-005  6.284915445296016E-003
+ dE/dx -2.493392538969583E-003 -2.753353771933423E-003  3.629828478481128E-003
+ dE/dx -1.612715940677713E-004 -8.294307711654128E-005 -6.285009232878619E-003
+ dE/dx -2.491675519449427E-003 -2.752686218135898E-003 -3.628419860628654E-003
+ dE/dx -1.598314915598289E-003  3.393127906456929E-003  5.137806550433878E-003
+ dE/dx  3.615112611591417E-003 -2.089504798544374E-003  4.373162094675488E-003
+ dE/dx -1.599429268403268E-003  3.392867865958681E-003 -5.139311594200044E-003
+ dE/dx  3.615868359080145E-003 -2.089903408702766E-003 -4.372719216351355E-003
+ dE/dx -3.737633086941826E-003 -3.073637176634317E-004  5.139209622083280E-003
+ dE/dx  1.140504746147608E-003  3.535591526215105E-003  3.632437198050703E-003
+ dE/dx -3.738261939973791E-003 -3.064829833624896E-004 -5.140482820400812E-003
+ dE/dx  1.140955785250101E-003  3.534057566079102E-003 -3.631207310711233E-003
+ dE/dx -9.451735820263429E-004  5.450111162742019E-004  6.409588114268974E-003
+ dE/dx -4.321964721541453E-004  8.082066381682569E-004  6.382989665326780E-003
+ dE/dx -9.457343692360136E-004  5.451776950655149E-004 -6.409402723229167E-003
+ dE/dx -4.309735134514578E-004  8.088906532970439E-004 -6.382704754113243E-003
+ dE/dx  1.853127919920685E-003 -2.798439341302156E-003  5.455292215213327E-003
+ dE/dx -3.642076483395242E-004  3.765495407757188E-003  5.202260844058356E-003
+ dE/dx  1.852300559514360E-003 -2.799103024828801E-003 -5.456240647070961E-003
+ dE/dx -3.639142273212284E-004  3.765910623501863E-003 -5.202154202897039E-003
+ dE/dx -3.445434872989365E-003 -1.565894579763915E-003  5.201392162605610E-003
+ dE/dx -3.445135108168161E-003 -1.565922821637083E-003 -5.201598695851887E-003
+ dE/dx  3.349857549872329E-003 -2.068399221040345E-004  5.455678259177062E-003
+ dE/dx -9.153428702352117E-004 -2.767460107582580E-005  6.383042653280772E-003
+ dE/dx  3.349815107050614E-003 -2.060038723143238E-004 -5.456400910640639E-003
+ dE/dx -9.151556131515359E-004 -2.834711781777750E-005 -6.382933385227320E-003
+ dE/dx -1.063734759879419E-003  3.861665505511429E-004  4.898545779417940E-003
+ dE/dx  6.116693797509940E-004  2.912359066748297E-004  5.653739170420744E-003
+ dE/dx -1.064034429983047E-003  3.841883223192553E-004 -4.898898856412655E-003
+ dE/dx  6.116070338660198E-004  2.920056189777987E-004 -5.653450357133855E-003
+ dE/dx -2.943450474819434E-003 -2.540516014245131E-003  4.596101918437047E-003
+ dE/dx  4.717238467449032E-003 -2.725908239215958E-003  3.020100584528656E-003
+ dE/dx -2.942931811039247E-003 -2.541317977103243E-003 -4.597009621166278E-003
+ dE/dx  4.716112159251798E-003 -2.724873359068466E-003 -3.018278578260481E-003
+ dE/dx  7.304888364812027E-004  3.819566283281867E-003  4.595004440798208E-003
+ dE/dx  5.653064549682259E-005 -6.796465269755258E-004  5.653243600895984E-003
+ dE/dx  7.314131600140605E-004  3.818948318389968E-003 -4.595831124978823E-003
+ dE/dx  5.583289150097770E-005 -6.792578091763341E-004 -5.652966247752018E-003
+ dE/dx -8.672717655034068E-004  7.293177387601370E-004  4.897586455848207E-003
+ dE/dx  8.233752124191892E-004 -4.766254116082493E-004  5.472706802867760E-003
+ dE/dx -8.657183138077528E-004  7.297228388412413E-004 -4.898016972999281E-003
+ dE/dx  8.237375913723218E-004 -4.760053733150337E-004 -5.472308992979805E-003
+ sigma  8.935517353727654E-002 -5.163709662892938E-002  2.877251313183840E-007
+ sigma  2.406331053752039E-003  0.107299038906167      -1.651815445535213E-007
+ sigma  4.017135013448011E-008 -3.605291903514747E-008  1.031569243510094E-002
+ kE: -1.464745264491736E-020  0.200000000000000      -4.052463925412480E-023
+ E(k) -0.262475351799331     
+ dE/dx  1.535066799987256E-004 -6.995659607473633E-004  5.540508625943401E-003
+ dE/dx -1.825251315397987E-004  6.743004037877136E-004  4.596253436113741E-003
+ dE/dx  1.534227890291327E-004 -6.997186941284922E-004 -5.540168904713574E-003
+ dE/dx -1.829447940989354E-004  6.741338753004393E-004 -4.594817797296116E-003
+ dE/dx -3.373562904247994E-004 -1.030697562748122E-004  5.975311405778225E-003
+ dE/dx -1.623044398081243E-006  1.085068987912250E-003  5.177716824902769E-003
+ dE/dx -3.357830664825354E-004 -1.047131335267834E-004 -5.974692058174327E-003
+ dE/dx -1.822423088970417E-006  1.085745060465135E-003 -5.176643697125839E-003
+ dE/dx -2.535991864745647E-006 -7.418815717723448E-004  6.249328660580374E-003
+ dE/dx  7.661241899980048E-004 -9.934814941414112E-004  5.969683324228103E-003
+ dE/dx -2.571913106642689E-006 -7.422874655584412E-004 -6.249088157400547E-003
+ dE/dx  7.670992016382970E-004 -9.928149785667967E-004 -5.969761184848889E-003
+ dE/dx  9.524815690570947E-006 -8.062383348858878E-004  4.835935247026062E-003
+ dE/dx  1.122295042695243E-003  6.672031563490421E-004  5.520996856756356E-003
+ dE/dx  7.708709011348779E-006 -8.058036145137275E-004 -4.836621262197898E-003
+ dE/dx  1.122670588640122E-003  6.668362568080325E-004 -5.520928968074659E-003
+ dE/dx  3.780923024095627E-007 -1.076898968314557E-003  5.319519929470017E-003
+ dE/dx  1.778047605895551E-004  6.746579919456499E-004  4.593561195649485E-003
+ dE/dx -2.384088506119571E-007 -1.074924753353933E-003 -5.318885816122321E-003
+ dE/dx  1.786855155760595E-004  6.740332475219037E-004 -4.592348084939929E-003
+ dE/dx  3.409478493415692E-004 -1.021988003278892E-004  5.971612337459755E-003
+ dE/dx -3.625983250899393E-003 -9.643176839801663E-004  2.531193910252147E-003
+ dE/dx  3.387212962185829E-004 -1.032894451006257E-004 -5.971141560640215E-003
+ dE/dx -3.624389195977590E-003 -9.632991576385356E-004 -2.529824656738885E-003
+ dE/dx -1.166089614546406E-003  3.107423162023387E-003  4.093559503370074E-003
+ dE/dx  2.977360732498466E-003 -2.059914782757566E-003  3.460079882918071E-003
+ dE/dx -1.167208917996998E-003  3.107066321417172E-003 -4.095032299748862E-003
+ dE/dx  2.978002133872387E-003 -2.060109681047203E-003 -3.459624409312648E-003
+ dE/dx -4.080837969221962E-003 -1.437748208054821E-003  3.637064530195069E-003
+ dE/dx  2.343915576555319E-006  5.134926491468016E-003  2.325262254665162E-003
+ dE/dx -4.081346638726998E-003 -1.436892294733165E-003 -3.638311011728062E-003
+ dE/dx  2.565812372125097E-006  5.133463743280000E-003 -2.323744843017936E-003
+ dE/dx -1.522413253461817E-004 -7.033159285335341E-004  5.538037222277870E-003
+ dE/dx -7.884145244329849E-004  1.642355975142516E-003  5.249210546139582E-003
+ dE/dx -1.526748806521302E-004 -7.031745714614129E-004 -5.538042425748845E-003
+ dE/dx -7.871915311739269E-004  1.642838679983440E-003 -5.249681009493960E-003
+ dE/dx  2.272948535116237E-003 -3.119394145553786E-003  4.081945809001257E-003
+ dE/dx  1.295905481119415E-008  4.196693747299050E-003  3.008168825469957E-003
+ dE/dx  2.272144762792068E-003 -3.120161532962612E-003 -4.083485206793414E-003
+ dE/dx  9.297404077009931E-008  4.197367998522546E-003 -3.007635631735531E-003
+ dE/dx -2.981520101794561E-003 -2.057258190243280E-003  3.459524747912991E-003
+ dE/dx -2.981495898187340E-003 -2.057069507872296E-003 -3.459412410868389E-003
+ dE/dx  4.077899535263977E-003 -1.442502749851729E-003  3.632329431524959E-003
+ dE/dx -1.125498583164672E-003  6.731281247344084E-004  5.516661143348405E-003
+ dE/dx  4.077907207881009E-003 -1.441646126275355E-003 -3.633353365414588E-003
+ dE/dx -1.125160537520493E-003  6.725443361965001E-004 -5.516922527635669E-003
+ dE/dx  2.091820438788361E-006 -1.113888011488054E-003  4.514074016690336E-003
+ dE/dx  7.885545765422564E-004  1.638746193902908E-003  5.254556787856970E-003
+ dE/dx  1.621752046281643E-006 -1.115739897872111E-003 -4.515204077950570E-003
+ dE/dx  7.883560028212031E-004  1.639433760261966E-003 -5.254789253605583E-003
+ dE/dx -2.274512337850353E-003 -3.119182268543910E-003  4.086970795985203E-003
+ dE/dx  3.629995083370730E-003 -9.684755889314171E-004  2.543772786286631E-003
+ dE/dx -2.274130179410598E-003 -3.120198110333065E-003 -4.088324479112986E-003
+ dE/dx  3.628782955069468E-003 -9.672299676800993E-004 -2.542296053505514E-003
+ dE/dx  1.168245577640156E-003  3.105744256524310E-003  4.093761668041246E-003
+ dE/dx -7.627360907549534E-004 -9.956906935865433E-004  5.970454548472989E-003
+ dE/dx  1.169278891779421E-003  3.105240295379650E-003 -4.094856958000097E-003
+ dE/dx -7.635507360192221E-004 -9.951639021534746E-004 -5.970500582437163E-003
+ dE/dx -7.553168470483935E-006 -8.072976223110926E-004  4.831159309406679E-003
+ dE/dx -7.820572998632083E-007  7.119221665532585E-004  5.788539017326094E-003
+ dE/dx -6.104319348639405E-006 -8.066939587216801E-004 -4.832111370837158E-003
+ dE/dx -2.694270368374397E-007  7.123793085134956E-004 -5.788504004701329E-003
+ sigma  9.932915583152797E-002 -5.422184214211875E-002 -5.331585462355527E-008
+ sigma  3.904208545199696E-005  0.108361427134028       1.262795945580133E-007
+ sigma  2.463352828476889E-009  1.239401923418097E-008  9.490450679355996E-003
+ kE:  0.200000000000000       0.200000000000000       6.508138470813668E-023
+ E(k) -0.262482066003253     
+ dE/dx  6.460182582966476E-004  3.735410115019074E-004  6.249535786468976E-003
+ dE/dx -9.431863288414571E-004 -5.422127136864170E-004  5.178360638487770E-003
+ dE/dx  6.460046979038354E-004  3.734371190298691E-004 -6.249144820532489E-003
+ dE/dx -9.435897737589926E-004 -5.421694691362815E-004 -5.177169470930275E-003
+ dE/dx -7.832356747307765E-005  3.455911684210498E-004  5.975309956902870E-003
+ dE/dx -6.760626835233937E-004 -1.812451723598287E-004  4.596036065501321E-003
+ dE/dx -7.653909510417853E-005  3.442815383209226E-004 -5.974699730802061E-003
+ dE/dx -6.761095791757430E-004 -1.805113922594392E-004 -4.594704581261455E-003
+ dE/dx  6.813657625847688E-004  2.200333332290046E-004  5.540196839428075E-003
+ dE/dx -1.940572999083162E-005 -1.309587697008266E-003  5.520014483262574E-003
+ dE/dx  6.813211935535262E-004  2.197142775725645E-004 -5.540033741587805E-003
+ dE/dx -1.853553616558437E-005 -1.308914618678377E-003 -5.520052922729277E-003
+ dE/dx  7.044372480729629E-004  3.963378608888018E-004  4.836213140858038E-003
+ dE/dx  1.240820486073709E-003 -1.711563114681020E-004  5.970446048926681E-003
+ dE/dx  7.025286497779359E-004  3.966236171946036E-004 -4.836893733151175E-003
+ dE/dx  1.241231712103779E-003 -1.716135694312636E-004 -5.970466575318671E-003
+ dE/dx  2.600331350220887E-004 -2.422062887868682E-004  5.972688227903830E-003
+ dE/dx -4.964074744674799E-004 -4.920805959575882E-004  4.594226525914421E-003
+ dE/dx  2.595901231785888E-004 -2.400731785994964E-004 -5.972172667151763E-003
+ dE/dx -4.953542310524796E-004 -4.924355464603555E-004 -4.592988287896606E-003
+ dE/dx  9.345554615595711E-004  5.394668511658992E-004  5.318876890178755E-003
+ dE/dx -4.447840581479394E-003 -2.566384237765884E-003  2.321923341830145E-003
+ dE/dx  9.323409634872740E-004  5.386321901218751E-004 -5.318270886812615E-003
+ dE/dx -4.446309123920725E-003 -2.565564257753250E-003 -2.320264560489325E-003
+ dE/dx -7.897196357963993E-004  4.255307286402518E-003  3.635232597657106E-003
+ dE/dx  3.271582097138201E-003 -1.551471635737348E-003  3.459879577950575E-003
+ dE/dx -7.907725586082777E-004  4.254973541581897E-003 -3.636739327848944E-003
+ dE/dx  3.272126951063866E-003 -1.551849941577860E-003 -3.459424022690316E-003
+ dE/dx -3.274711185470820E-003 -5.392297559415659E-004  4.094784109629768E-003
+ dE/dx -9.753051627376992E-004  3.624058505734305E-003  2.534234643651960E-003
+ dE/dx -3.275236568855413E-003 -5.383243598549258E-004 -4.096012193904864E-003
+ dE/dx -9.752066579867828E-004  3.622442722613358E-003 -2.533024651817630E-003
+ dE/dx  5.317941880123267E-004  4.809978728635172E-004  5.538739064757062E-003
+ dE/dx -1.144359728058571E-003  6.404044088764778E-004  5.517285617825330E-003
+ dE/dx  5.312949832621346E-004  4.811093394345459E-004 -5.538721539024581E-003
+ dE/dx -1.143097409660810E-003  6.408932092470502E-004 -5.517436695657118E-003
+ dE/dx  3.287798285953646E-003 -2.812064684949469E-003  3.631777989209063E-003
+ dE/dx  2.937031664340234E-004  3.609380809411001E-003  3.460355070617474E-003
+ dE/dx  3.286961198041962E-003 -2.812748835779296E-003 -3.633107498830121E-003
+ dE/dx  2.937140073058225E-004  3.609899008045914E-003 -3.459954099011865E-003
+ dE/dx -3.637908979796342E-003 -2.097178814798631E-003  3.006772610269541E-003
+ dE/dx -3.637951497768742E-003 -2.097170298323710E-003 -3.006562466853439E-003
+ dE/dx  3.837714296819403E-003 -4.100716343086527E-004  4.082592538633197E-003
+ dE/dx -1.815963079397673E-003 -1.353787934563716E-004  5.249553951954448E-003
+ dE/dx  3.837791507673089E-003 -4.091867884484067E-004 -4.083825193133655E-003
+ dE/dx -1.815585845903386E-003 -1.359901651694427E-004 -5.250084380402519E-003
+ dE/dx  6.971429093213971E-004  4.085142682447192E-004  4.833482891120342E-003
+ dE/dx  4.763017642159214E-004  1.159052596574579E-003  5.971491334734468E-003
+ dE/dx  6.965630006300389E-004  4.065121684067375E-004 -4.834313351086311E-003
+ dE/dx  4.760926191376635E-004  1.159845453071790E-003 -5.971496188175946E-003
+ dE/dx -2.106758450357045E-003 -2.563377841262936E-003  4.094549404161438E-003
+ dE/dx  2.652073992241850E-003 -2.661478852632610E-003  2.543464234510692E-003
+ dE/dx -2.106294881594317E-003 -2.564336020202976E-003 -4.095718550916278E-003
+ dE/dx  2.650720369183902E-003 -2.660450384766430E-003 -2.542007356147450E-003
+ dE/dx  1.566342397098137E-003  3.528741309325233E-003  4.085621776252303E-003
+ dE/dx -1.022876910900031E-003 -1.505419843178087E-003  5.253442007374660E-003
+ dE/dx  1.567418199295983E-003  3.528283780825921E-003 -4.086932017980481E-003
+ dE/dx -1.023593408046173E-003 -1.504861824903639E-003 -5.253695206577394E-003
+ dE/dx  9.649851830972416E-004  5.550069001117829E-004  4.512621927190802E-003
+ dE/dx -6.181438913020096E-004 -3.562047168771426E-004  5.788712260921780E-003
+ dE/dx  9.663400688131801E-004  5.554529823845074E-004 -4.513839539018176E-003
+ dE/dx -6.175568700871720E-004 -3.555827840616159E-004 -5.788664785340322E-003
+ sigma  9.657916034683020E-002 -5.900805015496575E-002 -6.160636240049959E-008
+ sigma -2.727552360641348E-003  0.113141095927175      -1.101161955409243E-007
+ sigma -2.192681649509967E-008 -2.860539394626527E-008  9.491837472837113E-003
+ kE:  0.400000000000000       0.200000000000000       4.350114200793664E-023
+ E(k) -0.256251396051543     
+ dE/dx  2.461554200302182E-004  8.327406296739009E-004  5.981058532266670E-003
+ dE/dx -1.499343740864830E-004 -8.264745466559247E-004  5.110599158527744E-003
+ dE/dx  2.460998546793586E-004  8.326013414013222E-004 -5.980841962792826E-003
+ dE/dx -1.503800796672361E-004 -8.262140135630875E-004 -5.109986021005543E-003
+ dE/dx -4.343439015064232E-004  4.290688114883188E-004  5.636066966381390E-003
+ dE/dx -2.461616899472163E-006 -7.836118213514583E-004  4.464950629532976E-003
+ dE/dx -4.326717787968978E-004  4.278542108223772E-004 -5.635886093530353E-003
+ dE/dx -2.689529604548425E-006 -7.830338543972123E-004 -4.464101102568445E-003
+ dE/dx -2.270309754101655E-006  2.638154225522041E-004  5.220544285597446E-003
+ dE/dx  4.603660402759141E-004 -1.038055075793913E-003  5.266104032349547E-003
+ dE/dx -2.311956559583217E-006  2.636178866141930E-004 -5.220448664601958E-003
+ dE/dx  4.611634256757580E-004 -1.037470693582259E-003 -5.266160022533389E-003
+ dE/dx -2.723840784472733E-004  9.749923192396219E-004  4.583825742905279E-003
+ dE/dx  1.277359554131483E-003 -4.678044748189803E-004  5.798895647962682E-003
+ dE/dx -2.741778611349820E-004  9.752385728181757E-004 -4.584423191235448E-003
+ dE/dx  1.277795175556250E-003 -4.681878473199127E-004 -5.798986957995676E-003
+ dE/dx  9.229701337132016E-007  2.691307860451641E-004  6.367451762775358E-003
+ dE/dx  1.438782231951864E-004 -8.259464761626036E-004  5.112731428552416E-003
+ dE/dx  2.536332408359576E-007  2.712169171159084E-004 -6.367457562007670E-003
+ dE/dx  1.448165255514308E-004 -8.262043295606616E-004 -5.112171814869667E-003
+ dE/dx  4.381596080364657E-004  4.305551170846241E-004  5.635738623438235E-003
+ dE/dx -3.574412515466557E-003 -3.069297043436283E-003  3.114349592425516E-003
+ dE/dx  4.358644610891750E-004  4.299581034128315E-004 -5.635599478569149E-003
+ dE/dx -3.572807658383647E-003 -3.068612658325962E-003 -3.112710796156011E-003
+ dE/dx -1.206535106652004E-003  3.868065053261443E-003  4.584925860372564E-003
+ dE/dx  3.578768306216500E-003 -1.826827082334414E-003  4.434667791748058E-003
+ dE/dx -1.207578007850997E-003  3.867734503962281E-003 -4.586328176931652E-003
+ dE/dx  3.579378127602495E-003 -1.827252811066498E-003 -4.434307793958777E-003
+ dE/dx -3.371466497342292E-003 -5.940595957844012E-005  5.184183615720263E-003
+ dE/dx  1.877683417254322E-006  3.253464407338271E-003  3.493278372913698E-003
+ dE/dx -3.372033068997253E-003 -5.851409295022681E-005 -5.185352117605100E-003
+ dE/dx  2.108091993593916E-006  3.251884406139112E-003 -3.492144893076212E-003
+ dE/dx -2.439525519243926E-004  8.300791195458931E-004  5.985238442576952E-003
+ dE/dx -5.220207257819876E-004  4.176546842928301E-004  6.075946185518450E-003
+ dE/dx -2.444568031826606E-004  8.301845873523433E-004 -5.985091898372981E-003
+ dE/dx -5.208052177038751E-004  4.182602447628172E-004 -6.075683160524500E-003
+ dE/dx  2.565642896975100E-003 -2.565347214723383E-003  4.765675450960258E-003
+ dE/dx  4.055456304255988E-007  3.594183928259136E-003  4.992313641192396E-003
+ dE/dx  2.564773558090661E-003 -2.565961633021288E-003 -4.766640415064783E-003
+ dE/dx  5.336461286875443E-007  3.594585343198369E-003 -4.992177223566117E-003
+ dE/dx -3.583218270708604E-003 -1.824906843295788E-003  4.433960592448022E-003
+ dE/dx -3.583096997516522E-003 -1.824962504000095E-003 -4.433985826401486E-003
+ dE/dx  3.368706671264193E-003 -6.319639541318148E-005  5.181548606214711E-003
+ dE/dx -1.280722124024069E-003 -4.633185679179754E-004  5.799946166191412E-003
+ dE/dx  3.368721651826104E-003 -6.233454141826545E-005 -5.182520002763331E-003
+ dE/dx -1.280460716804407E-003 -4.639349114116799E-004 -5.800170315032827E-003
+ dE/dx  3.164778831098521E-006  7.373873443681038E-004  4.949691306000419E-003
+ dE/dx  5.211621806777874E-004  4.145291397190078E-004  6.076168987311398E-003
+ dE/dx  2.684796859090597E-006  7.353656356304030E-004 -4.950043364667617E-003
+ dE/dx  5.210755487500146E-004  4.153432175507344E-004 -6.075883260431540E-003
+ dE/dx -2.566344015840204E-003 -2.566482386691449E-003  4.767837569154857E-003
+ dE/dx  3.575561021009667E-003 -3.073777582922154E-003  3.123639347128952E-003
+ dE/dx -2.565848906853457E-003 -2.567325684221162E-003 -4.768754260614154E-003
+ dE/dx  3.574323429084016E-003 -3.072839270431550E-003 -3.122009208376440E-003
+ dE/dx  1.209935468940580E-003  3.866123263938112E-003  4.584336346739252E-003
+ dE/dx -4.571010173532239E-004 -1.040538245377325E-003  5.267546432288769E-003
+ dE/dx  1.210917000499405E-003  3.865602228119871E-003 -4.585398812835751E-003
+ dE/dx -4.577639762157069E-004 -1.040094048183551E-003 -5.267538048717820E-003
+ dE/dx  2.763949949225827E-004  9.733996360908223E-004  4.581838574838788E-003
+ dE/dx -1.507752118833279E-006 -6.605759616887934E-004  5.513010463926813E-003
+ dE/dx  2.778157484610234E-004  9.737898868659664E-004 -4.582604787941735E-003
+ dE/dx -1.026284859763226E-006 -6.599161763891690E-004 -5.512662435824958E-003
+ sigma  9.047245769819605E-002 -5.452824425763080E-002  1.147384181281342E-007
+ sigma  4.754793425058123E-005  0.108994513692924      -2.134490836656186E-007
+ sigma  1.935885399258371E-009 -4.473376158222296E-008  1.014355204882299E-002
+ kE: -0.400000000000000       0.200000000000000       1.252980340089691E-022
+ E(k) -0.254184582745083     
+ dE/dx  7.081459450901492E-005  4.605482049586907E-004  5.575664636426909E-003
+ dE/dx  5.301122227152962E-004 -1.850302085314121E-004  4.835314375351603E-003
+ dE/dx  7.068713269147304E-005  4.603550951183683E-004 -5.575502339237265E-003
+ dE/dx  5.296933506397473E-004 -1.847593352237951E-004 -4.834833716131797E-003
+ dE/dx -5.961217519472651E-004  3.456673990498388E-004  5.577919473865800E-003
+ dE/dx  4.245121220338667E-004 -3.691711972976197E-004  4.835816960765766E-003
+ dE/dx -5.946038526372602E-004  3.442970370605537E-004 -5.577965257263046E-003
+ dE/dx  4.241099925488307E-004 -3.686966889230783E-004 -4.835374902708118E-003
+ dE/dx -3.651383596663730E-004 -2.874967632639531E-004  5.576526221825406E-003
+ dE/dx  8.723709898043137E-004 -6.608366243179700E-004  5.549527493319278E-003
+ dE/dx -3.651745600921440E-004 -2.876817072447763E-004 -5.576410017803864E-003
+ dE/dx  8.731913746256166E-004 -6.603137696013507E-004 -5.549572521011251E-003
+ dE/dx -8.998533749972483E-004  5.211116692313482E-004  4.534157401598409E-003
+ dE/dx  1.005640800079328E-003 -4.290610748985500E-004  5.549510734281260E-003
+ dE/dx -9.015685580339334E-004  5.214263211284332E-004 -4.534689842562292E-003
+ dE/dx  1.006088630568305E-003 -4.293672959746001E-004 -5.549577784801767E-003
+ dE/dx  9.314952939825551E-006  8.103977700074983E-005  6.209992183305436E-003
+ dE/dx  6.834650609985223E-004 -3.958949519488038E-004  5.356675275655105E-003
+ dE/dx  8.474093576743736E-006  8.301412986500907E-005 -6.210167167918022E-003
+ dE/dx  6.842731047673870E-004 -3.962839377747583E-004 -5.356463293623936E-003
+ dE/dx -6.438515353695277E-005 -4.634532730658197E-005  6.209992168308040E-003
+ dE/dx -3.042839379630671E-003 -2.489760168332918E-003  3.821931819853884E-003
+ dE/dx -6.670032485353965E-005 -4.699547896191571E-005 -6.210191722562444E-003
+ dE/dx -3.041204051734961E-003 -2.489019919490190E-003 -3.820443691440123E-003
+ dE/dx -1.489341670194118E-003  3.360707514324247E-003  5.414970742028149E-003
+ dE/dx  3.533827164158148E-003 -2.042380364561512E-003  5.012655005766877E-003
+ dE/dx -1.490404073373661E-003  3.360392213510711E-003 -5.416306319896457E-003
+ dE/dx  3.534500911812242E-003 -2.042724442060573E-003 -5.012363804384290E-003
+ dE/dx -3.655051943534539E-003 -3.854278885965476E-004  5.416104096732820E-003
+ dE/dx  6.377232647696279E-004  3.879913299860904E-003  3.824230722866127E-003
+ dE/dx -3.655604488497592E-003 -3.845563517816444E-004 -5.417233049779768E-003
+ dE/dx  6.380725377134175E-004  3.878412001280491E-003 -3.822934914270112E-003
+ dE/dx -7.765030816169352E-004  4.475031318924047E-004  6.166026346173470E-003
+ dE/dx -2.936509662775417E-004  7.220559416613411E-004  6.214978232302977E-003
+ dE/dx -7.769879603501326E-004  4.476254938048642E-004 -6.165853829131577E-003
+ dE/dx -2.924914124205329E-004  7.227098704240829E-004 -6.214703251284832E-003
+ dE/dx  1.998698071775443E-003 -2.824542319995718E-003  5.622689751598771E-003
+ dE/dx -1.923481499127885E-004  3.873047334104114E-003  5.505119135033590E-003
+ dE/dx  1.997867205875251E-003 -2.825176297434434E-003 -5.623636168137685E-003
+ dE/dx -1.921313283884605E-004  3.873492447279892E-003 -5.505035008268492E-003
+ dE/dx -3.453057713123235E-003 -1.768466653956872E-003  5.504217795269144E-003
+ dE/dx -3.452812469636136E-003 -1.768431793034637E-003 -5.504460292168732E-003
+ dE/dx  3.444988131660967E-003 -3.197349240966220E-004  5.623104151938060E-003
+ dE/dx -7.714818302165677E-004 -1.047152596310928E-004  6.215110126578783E-003
+ dE/dx  3.444924234517182E-003 -3.189068740939474E-004 -5.623821819320807E-003
+ dE/dx -7.712997172096575E-004 -1.053267553133953E-004 -6.215004623629990E-003
+ dE/dx -6.076261225405428E-004  3.885181028416522E-005  4.855452760793823E-003
+ dE/dx  3.648245254573766E-004  4.412739563777483E-004  5.782983688444314E-003
+ dE/dx -6.079950095161324E-004  3.689623959103053E-005 -4.855761330788351E-003
+ dE/dx  3.647927567813106E-004  4.420640258486303E-004 -5.782732711840259E-003
+ dE/dx -2.596391587852900E-003 -2.657335729197600E-003  5.109440615718290E-003
+ dE/dx  4.292228078475533E-003 -2.480225315810349E-003  3.451317175074910E-003
+ dE/dx -2.595899293787965E-003 -2.658159325370253E-003 -5.110349691805452E-003
+ dE/dx  4.291082406959679E-003 -2.479181466612203E-003 -3.449613525498558E-003
+ dE/dx  1.005118945554079E-003  3.577083702759981E-003  5.108634858105260E-003
+ dE/dx -1.967358408051960E-004 -5.406722906408759E-004  5.783079358854345E-003
+ dE/dx  1.006030679422224E-003  3.576492307583626E-003 -5.109453571009331E-003
+ dE/dx -1.974375074732632E-004 -5.403032928245632E-004 -5.782811150255451E-003
+ dE/dx -3.385259536292314E-004  5.076416333326658E-004  4.854857264902763E-003
+ dE/dx  4.652857342395320E-004 -2.696537709563342E-004  5.422386997635428E-003
+ dE/dx -3.370449349816624E-004  5.080812382116413E-004 -4.855226699940159E-003
+ dE/dx  4.657016197465785E-004 -2.690663429265062E-004 -5.421893077005514E-003
+ sigma  8.937850684508707E-002 -5.165170712386669E-002  1.829099739997124E-007
+ sigma  1.329709879846802E-003  0.105465219202341      -1.188559992848140E-007
+ sigma  2.433538960604483E-008 -2.758609461329611E-008  1.058817839544521E-002
+ kE: -0.200000000000000       0.200000000000000       4.555779083125265E-022
+ E(k) -0.256252553820093     
+ dE/dx -2.255551656583465E-004 -1.291972843502363E-004  5.220340684175695E-003
+ dE/dx  6.759072189948642E-004  3.918445136916283E-004  4.464664305440568E-003
+ dE/dx -2.256913059561793E-004 -1.293851495482494E-004 -5.220140396199227E-003
+ dE/dx  6.754799449952834E-004  3.918939264251148E-004 -4.463755944836688E-003
+ dE/dx -5.875644236822261E-004  1.636124400273619E-004  5.636178796104192E-003
+ dE/dx  6.407493098777848E-004  5.397701408156442E-004  5.110686175684798E-003
+ dE/dx -5.861200542998643E-004  1.620404324675619E-004 -5.635988393960405E-003
+ dE/dx  6.403454980133301E-004  5.403295936373308E-004 -5.110141152585615E-003
+ dE/dx -5.999343392559866E-004 -6.250982678877230E-004  5.981843951652559E-003
+ dE/dx  1.041702537689525E-003 -8.764978656833427E-004  5.798925540571500E-003
+ dE/dx -5.999674193494818E-004 -6.254021025448300E-004 -5.981692118433137E-003
+ dE/dx  1.042598585902890E-003 -8.759351922097392E-004 -5.799004961724212E-003
+ dE/dx -9.797499978796283E-004 -2.490092349631467E-004  4.583648606339121E-003
+ dE/dx  1.126640645246095E-003  1.163587595579776E-004  5.266723641397633E-003
+ dE/dx -9.814400181629463E-004 -2.486087644578743E-004 -4.584250807044670E-003
+ dE/dx  1.127037710767393E-003  1.160510297133417E-004 -5.266736707856310E-003
+ dE/dx -1.530093246140092E-004 -5.922381948083265E-004  5.635887040070405E-003
+ dE/dx  7.868036065414749E-004  2.867048257903114E-004  5.112096778090812E-003
+ dE/dx -1.538665092981015E-004 -5.903138366145547E-004 -5.635729455802793E-003
+ dE/dx  7.875504281014150E-004  2.861412159296305E-004 -5.111564334617649E-003
+ dE/dx -2.314624504641092E-004 -1.329602367763934E-004  6.367014795425945E-003
+ dE/dx -2.817502244843196E-003 -1.626125206367845E-003  3.490827425825056E-003
+ dE/dx -2.337679681387459E-004 -1.338285720990244E-004 -6.367060812883424E-003
+ dE/dx -2.815863860283379E-003 -1.625235653563147E-003 -3.489508255206676E-003
+ dE/dx -1.630245728648368E-003  2.951793327964722E-003  5.183353066130534E-003
+ dE/dx  3.369454777616950E-003 -2.189107317370186E-003  4.435007685529684E-003
+ dE/dx -1.631348378750521E-003  2.951483723835847E-003 -5.184735515063799E-003
+ dE/dx  3.370160716833519E-003 -2.189345442505957E-003 -4.434655005869443E-003
+ dE/dx -3.953619974714991E-003 -8.836411722779013E-004  4.586685741260987E-003
+ dE/dx  8.742706539290856E-004  4.629863099881218E-003  3.117092025677986E-003
+ dE/dx -3.954143932212028E-003 -8.827881256237958E-004 -4.587843803967681E-003
+ dE/dx  8.746435205427113E-004  4.628408772892656E-003 -3.115622598045396E-003
+ dE/dx -8.421430460151818E-004 -2.051139273743148E-004  5.984621001187088E-003
+ dE/dx -2.370863217809791E-004  1.342448081643546E-003  5.799523214474565E-003
+ dE/dx -8.425841916863760E-004 -2.049757411083908E-004 -5.984501451690977E-003
+ dE/dx -2.359191216035993E-004  1.343038277965147E-003 -5.799630073945876E-003
+ dE/dx  1.738133242115335E-003 -2.886572230062784E-003  5.181197030080843E-003
+ dE/dx -2.087100268940278E-004  4.013851370757841E-003  4.435365836728489E-003
+ dE/dx  1.737318400654686E-003 -2.887288884591215E-003 -5.182420464869510E-003
+ dE/dx -2.085001071474622E-004  4.014430183921371E-003 -4.435063771032460E-003
+ dE/dx -3.114995062945628E-003 -1.795985383625008E-003  4.991799416462224E-003
+ dE/dx -3.114778416983024E-003 -1.795846155351166E-003 -4.991975312960528E-003
+ dE/dx  3.503915170145973E-003 -9.403923503633088E-004  4.766213767453950E-003
+ dE/dx -6.217713386866680E-004  2.452248897200911E-004  6.075588253100960E-003
+ dE/dx  3.503829452716735E-003 -9.395529164095786E-004 -4.766928154330198E-003
+ dE/dx -6.215492003746495E-004  2.446231077077830E-004 -6.075497798209822E-003
+ dE/dx -7.042705667833219E-004 -7.266156498365996E-004  4.582536996695355E-003
+ dE/dx  6.681380153856703E-004  9.165354302617474E-004  5.268059481199090E-003
+ dE/dx -7.046344356400752E-004 -7.284905202684531E-004 -4.583243030950085E-003
+ dE/dx  6.680567875094360E-004  9.172457552449101E-004 -5.268053050069799E-003
+ dE/dx -2.744553133897800E-003 -2.979015647015759E-003  4.585759966422122E-003
+ dE/dx  4.448713899095472E-003 -1.563200821359777E-003  3.123999569489633E-003
+ dE/dx -2.744129661698003E-003 -2.979927250559656E-003 -4.586893807303411E-003
+ dE/dx  4.447630944694228E-003 -1.562020912621316E-003 -3.122349670526750E-003
+ dE/dx  9.413027540480890E-004  3.505603741917832E-003  4.767378461345624E-003
+ dE/dx -9.555563488783037E-005 -6.626372140582356E-004  6.076141566428424E-003
+ dE/dx  9.422352221117336E-004  3.505046083075094E-003 -4.768195538890491E-003
+ dE/dx -9.632538934469716E-005 -6.622323752096315E-004 -6.075861523898771E-003
+ dE/dx -6.389593106328049E-004 -3.702075439903569E-004  4.948317128562358E-003
+ dE/dx  5.708777178180376E-004  3.298074653521782E-004  5.512891685837966E-003
+ dE/dx -6.374616117210829E-004 -3.696672089427588E-004 -4.948763273163071E-003
+ dE/dx  5.712852146840224E-004  3.303120366019743E-004 -5.512561962635019E-003
+ sigma  9.242719771018468E-002 -5.116634805577844E-002  1.222711251021698E-007
+ sigma  1.981835646907701E-003  0.105621613476988       4.853177322327873E-008
+ sigma  2.881575197380790E-008  3.646053695701034E-010  1.014379631660379E-002
+ kE: -2.929490528983473E-020  0.400000000000000      -8.104927850824959E-023
+ E(k) -0.255348249483430     
+ dE/dx  3.428445119754230E-004 -5.603867694619754E-004  5.400583589503384E-003
+ dE/dx  1.348806052602565E-004  9.538705146269779E-004  4.637897462080495E-003
+ dE/dx  3.426842294637982E-004 -5.605454024396718E-004 -5.400365443884063E-003
+ dE/dx  1.346623067735404E-004  9.536532073408662E-004 -4.637134437342603E-003
+ dE/dx  1.547453832364516E-004 -9.635367843580359E-005  6.285314250909698E-003
+ dE/dx -1.560543754499878E-006  1.419713670629488E-003  5.523585663806356E-003
+ dE/dx  1.562021683036153E-004 -9.804114637960800E-005 -6.285345609373927E-003
+ dE/dx -1.747743137585575E-006  1.420293793673192E-003 -5.523319168359277E-003
+ dE/dx -2.392622644561456E-006 -1.089416124430705E-003  6.405706064097494E-003
+ dE/dx  4.815395223912162E-004 -7.781363303783912E-004  6.381547829924524E-003
+ dE/dx -2.451286191780053E-006 -1.089836013302095E-003 -6.405529326822452E-003
+ dE/dx  4.825437933789609E-004 -7.775975103538114E-004 -6.381248101826244E-003
+ dE/dx -1.968236575693229E-004 -1.117213708903914E-003  4.900366264113967E-003
+ dE/dx  5.571640836925795E-004  3.802384140045636E-004  5.653484126442956E-003
+ dE/dx -1.985724869774361E-004 -1.116706074256567E-003 -4.900603548852468E-003
+ dE/dx  5.576431047590258E-004  3.799315416764385E-004 -5.653181593683552E-003
+ dE/dx  3.899744957601556E-007 -1.161010102105274E-003  5.203623511155232E-003
+ dE/dx -1.390397881519953E-004  9.539419191114491E-004  4.637875270360851E-003
+ dE/dx -2.011076644575963E-007 -1.159147886387437E-003 -5.203492765556953E-003
+ dE/dx -1.384326693888143E-004  9.533250255538182E-004 -4.637229833091893E-003
+ dE/dx -1.513684120599921E-004 -9.548820469993855E-005  6.284367592251625E-003
+ dE/dx -3.630639099593664E-003 -7.808507766215745E-004  3.628533807629972E-003
+ dE/dx -1.534719693721088E-004 -9.665713339269245E-005 -6.284482347628063E-003
+ dE/dx -3.629165646179370E-003 -7.797800370965201E-004 -3.627154852313610E-003
+ dE/dx -1.496501219826626E-003  3.007277211115332E-003  5.456050706545710E-003
+ dE/dx  3.076973709351510E-003 -2.200014459016187E-003  5.200799863650228E-003
+ dE/dx -1.497541457068269E-003  3.006910877604726E-003 -5.457169529321417E-003
+ dE/dx  3.077557106310695E-003 -2.200096642874362E-003 -5.200657300984732E-003
+ dE/dx -3.673043834471732E-003 -1.275625776883974E-003  4.596781287830215E-003
+ dE/dx  2.512044011134221E-006  5.444149868694200E-003  3.013074172402456E-003
+ dE/dx -3.673429244204749E-003 -1.274771340985396E-003 -4.597706367674237E-003
+ dE/dx  2.714911219498426E-006  5.442754538046459E-003 -3.011427884205102E-003
+ dE/dx -3.417123494925492E-004 -5.638851826212070E-004  5.401159197816576E-003
+ dE/dx -1.942374275145406E-004  1.442325024930139E-003  5.248312896036510E-003
+ dE/dx -3.420285239552878E-004 -5.637951874278688E-004 -5.401126352243626E-003
+ dE/dx -1.931588678413410E-004  1.442807999786940E-003 -5.248619076064539E-003
+ dE/dx  2.136256221188378E-003 -3.080180981862436E-003  5.134369612531909E-003
+ dE/dx  4.344909935155698E-008  4.177309934532588E-003  4.372552426274217E-003
+ dE/dx  2.135464898234184E-003 -3.080908151990994E-003 -5.135730127474118E-003
+ dE/dx  1.375378229328987E-007  4.178001453772587E-003 -4.372162616152361E-003
+ dE/dx -3.081505495273725E-003 -2.197308889849349E-003  5.200651919515084E-003
+ dE/dx -3.081399638621004E-003 -2.197016212559017E-003 -5.200838714315319E-003
+ dE/dx  3.670224784852701E-003 -1.280250016117255E-003  4.592929173631645E-003
+ dE/dx -5.604944381957668E-004  3.858721836098868E-004  5.652057952158302E-003
+ dE/dx  3.670089531362288E-003 -1.279401718785173E-003 -4.593650400466066E-003
+ dE/dx -5.602453223671681E-004  3.853603720540793E-004 -5.651991877855956E-003
+ dE/dx  1.935408425646597E-006 -1.521798232425867E-003  4.351115925282321E-003
+ dE/dx  1.942706171128467E-004  1.439401248884862E-003  5.251081146383112E-003
+ dE/dx  1.479852939117009E-006 -1.523600051885000E-003 -4.351959934683645E-003
+ dE/dx  1.942084475661162E-004  1.440102302836246E-003 -5.251276819358049E-003
+ dE/dx -2.137444954172999E-003 -3.079892378722267E-003  5.138164969546674E-003
+ dE/dx  3.634643774471382E-003 -7.847402484305985E-004  3.638660377159074E-003
+ dE/dx -2.137076074458466E-003 -3.080904223958055E-003 -5.139416194648614E-003
+ dE/dx  3.633540149239754E-003 -7.834777106909518E-004 -3.637260425276844E-003
+ dE/dx  1.498899867497147E-003  3.004963457592563E-003  5.455874753954182E-003
+ dE/dx -4.785490404259024E-004 -7.803402861098558E-004  6.382786061582063E-003
+ dE/dx  1.499838381576009E-003  3.004456312342561E-003 -5.456698725312062E-003
+ dE/dx -4.793690875522820E-004 -7.799312654241228E-004 -6.382518592296762E-003
+ dE/dx  1.985157612798729E-004 -1.118500797938951E-003  4.898342456327906E-003
+ dE/dx -6.985209731522551E-007  9.521913332580486E-004  5.473396005357209E-003
+ dE/dx  1.998959039976073E-004 -1.117855400806418E-003 -4.898750403033949E-003
+ dE/dx -1.971934583833224E-007  9.526117084288078E-004 -5.472997468714123E-003
+ sigma  9.408997355872037E-002 -5.163925293385203E-002 -8.956346505822281E-008
+ sigma  3.477431140460961E-005  0.103196345615539       2.073353018230142E-007
+ sigma  3.200795362008712E-009  2.793104352872099E-008  1.031567033450818E-002
+ kE:  0.200000000000000       0.400000000000000       3.680253277298162E-022
+ E(k) -0.256249591455901     
+ dE/dx  8.434382536510338E-004 -2.025035684563231E-004  5.982183096991145E-003
+ dE/dx -7.922195038009986E-004  2.869001456793116E-004  5.111747845318803E-003
+ dE/dx  8.433674547013905E-004 -2.026204375019026E-004 -5.981944562688178E-003
+ dE/dx -7.924639082788071E-004  2.867959787498446E-004 -5.111102277906680E-003
+ dE/dx  2.345337061426926E-004 -1.342858206400180E-004  6.368241179542529E-003
+ dE/dx -6.445705571876142E-004  5.403752676510160E-004  5.112475746941300E-003
+ dE/dx  2.361843217867255E-004 -1.357488668817152E-004 -6.368205504718514E-003
+ dE/dx -6.445747841344484E-004  5.409487735745188E-004 -5.111871537371410E-003
+ dE/dx  5.951781605696620E-004 -6.257048433986658E-004  5.983583530476081E-003
+ dE/dx  9.903232655441470E-005 -6.598422722076304E-004  6.076098996193891E-003
+ dE/dx  5.951092886302125E-004 -6.260411057982619E-004 -5.983386262314650E-003
+ dE/dx  9.997967044864051E-005 -6.592737003294463E-004 -6.075778161963926E-003
+ dE/dx  6.414508195905662E-004 -3.692073487522245E-004  4.951625992733783E-003
+ dE/dx  6.186202391200670E-004  2.403809010724801E-004  6.075744071618567E-003
+ dE/dx  6.395791840465695E-004 -3.688230196256425E-004 -4.951860286207964E-003
+ dE/dx  6.191232692426933E-004  2.400161916421178E-004 -6.075451798273060E-003
+ dE/dx  1.541671900415899E-004 -5.924714422365923E-004  5.635364483610421E-003
+ dE/dx -6.804353570157640E-004  3.924765322665800E-004  4.465202080656763E-003
+ dE/dx  1.537825886289496E-004 -5.905016575999137E-004 -5.635234335456910E-003
+ dE/dx -6.796371059095270E-004  3.920802092149185E-004 -4.464391832222475E-003
+ dE/dx  5.916837934125286E-004  1.643008938364295E-004  5.635323774236022E-003
+ dE/dx -4.445517293618017E-003 -1.558400801829222E-003  3.113488112708569E-003
+ dE/dx  5.896217208593106E-004  1.632573605302968E-004 -5.635199808975540E-003
+ dE/dx -4.444080449620491E-003 -1.557435573853640E-003 -3.111869809983943E-003
+ dE/dx -9.379106221420394E-004  3.506975069705475E-003  4.767364412737932E-003
+ dE/dx  3.111516681594458E-003 -1.798226859717124E-003  4.990993743356950E-003
+ dE/dx -9.389162998009850E-004  3.506565249866104E-003 -4.768500489773743E-003
+ dE/dx  3.112000466410788E-003 -1.798439367679156E-003 -4.990825895112055E-003
+ dE/dx -3.507009072944362E-003 -9.360533520270213E-004  4.768260744809738E-003
+ dE/dx -8.699279193139319E-004  4.629969387947247E-003  3.115866223804319E-003
+ dE/dx -3.507428672394821E-003 -9.351905251082258E-004 -4.769203224786304E-003
+ dE/dx -8.698664880410447E-004  4.628515396146486E-003 -3.114434531565173E-003
+ dE/dx  2.273827455485819E-004 -1.329751887805136E-004  5.221008479554563E-003
+ dE/dx -6.690310767736300E-004  9.198960525846286E-004  5.265073598829636E-003
+ dE/dx  2.270081671687150E-004 -1.329039156341189E-004 -5.221004601682759E-003
+ dE/dx -6.679041126124506E-004  9.203741615694356E-004 -5.265200056778898E-003
+ dE/dx  2.743788985776339E-003 -2.979047949733868E-003  4.581289817387875E-003
+ dE/dx  2.090084866181938E-004  4.013866251426394E-003  4.434481011839576E-003
+ dE/dx  2.742956951390385E-003 -2.979698275843907E-003 -4.582541383146501E-003
+ dE/dx  2.090068877153074E-004  4.014460353180866E-003 -4.434161796384326E-003
+ dE/dx -3.374881942244701E-003 -2.186508112928255E-003  4.433409740809304E-003
+ dE/dx -3.374893446412506E-003 -2.186343159047974E-003 -4.433419590390596E-003
+ dE/dx  3.951138101190722E-003 -8.880885834325853E-004  4.581736131414865E-003
+ dE/dx -1.130149096916198E-003  1.219931373523023E-004  5.265212383851373E-003
+ dE/dx  3.951110463997756E-003 -8.872426732272025E-004 -4.582706687253389E-003
+ dE/dx -1.129843572686244E-003  1.214795664210181E-004 -5.265441903783578E-003
+ dE/dx  7.091139718959151E-004 -7.270684120060837E-004  4.583252058769612E-003
+ dE/dx  2.374690701423363E-004  1.339542544331711E-003  5.800901409082059E-003
+ dE/dx  7.085539647663662E-004 -7.289494058168320E-004 -4.583938839990256E-003
+ dE/dx  2.373626136326771E-004  1.340318522903257E-003 -5.800955946539598E-003
+ dE/dx -1.739483104517153E-003 -2.887119028477669E-003  5.183487378106416E-003
+ dE/dx  2.820353905570546E-003 -1.629670849788845E-003  3.500421905269827E-003
+ dE/dx -1.739070329190211E-003 -2.888091942746446E-003 -5.184627163195182E-003
+ dE/dx  2.819099686586003E-003 -1.628558664391902E-003 -3.499095154815170E-003
+ dE/dx  1.632144712114146E-003  2.949098534390783E-003  5.182904772551632E-003
+ dE/dx -1.038711110392268E-003 -8.782482839085650E-004  5.801325384148842E-003
+ dE/dx  1.633145715101708E-003  2.948619463586115E-003 -5.183965229178591E-003
+ dE/dx -1.039453009313544E-003 -8.777961754195569E-004 -5.801347891021045E-003
+ dE/dx  9.824255640093877E-004 -2.506838970090277E-004  4.582379898223886E-003
+ dE/dx -5.728934785947781E-004  3.301035535704032E-004  5.513501545394887E-003
+ dE/dx  9.837456878707808E-004 -2.501445435489394E-004 -4.583129843076093E-003
+ dE/dx -5.723101373013578E-004  3.306021079758308E-004 -5.513152645136151E-003
+ sigma  9.437839514355705E-002 -5.452963881866520E-002 -1.444911326257876E-007
+ sigma -1.908319952932783E-003  0.105610174757908       4.166325590680400E-008
+ sigma -2.348247445950432E-008 -8.228498374436294E-010  1.014356962084061E-002
+ kE:  0.400000000000000       0.400000000000000       1.301627694162734E-022
+ E(k) -0.255329183088171     
+ dE/dx  9.465358103178643E-004  5.468016016667191E-004  6.403327263394978E-003
+ dE/dx -1.233617920759945E-003 -7.097011871281874E-004  5.522652070274997E-003
+ dE/dx  9.465313009778542E-004  5.467214373252664E-004 -6.403158764825543E-003
+ dE/dx -1.233922587235848E-003 -7.096174132685438E-004 -5.522349237260080E-003
+ dE/dx  1.616844569337015E-004 -8.409871017717986E-005  6.284909441823094E-003
+ dE/dx -7.592349346318365E-004 -5.954865620791790E-004  4.638665409120138E-003
+ dE/dx  1.634654262415646E-004 -8.529133355570291E-005 -6.284957190270128E-003
+ dE/dx -7.591373400678557E-004 -5.949508002601041E-004 -4.637930889380532E-003
+ dE/dx  6.550562533506680E-004 -1.270702478752849E-005  5.401278440103613E-003
+ dE/dx -5.241085152104769E-005 -6.765920995549522E-004  5.653080689132062E-003
+ dE/dx  6.549739304789326E-004 -1.291469339198877E-005 -5.401119702845084E-003
+ dE/dx -5.154708215753336E-005 -6.760318359032887E-004 -5.652777371796732E-003
+ dE/dx  8.712433158523441E-004  7.305058176565092E-004  4.900380911565683E-003
+ dE/dx  9.128024398253170E-004 -3.123767887572977E-005  6.380232270206677E-003
+ dE/dx  8.693084818486483E-004  7.307545556431850E-004 -4.900610801604421E-003
+ dE/dx  9.133294831786488E-004 -3.164542303889570E-005 -6.380011029564162E-003
+ dE/dx  8.345741367956821E-006  1.809287686998882E-004  6.284262668719660E-003
+ dE/dx -8.964701315008240E-004 -3.566339849414977E-004  4.638591660754061E-003
+ dE/dx  8.021602132582740E-006  1.830098817881378E-004 -6.284356129771956E-003
+ dE/dx -8.955644859300211E-004 -3.567558053572303E-004 -4.637907880587726E-003
+ dE/dx  1.008015234435844E-003  5.817650337153230E-004  5.203694350816339E-003
+ dE/dx -4.714620405601795E-003 -2.720325126117225E-003  3.010746416600297E-003
+ dE/dx  1.005916653551046E-003  5.809712582655427E-004 -5.203552742658313E-003
+ dE/dx -4.713158576531174E-003 -2.719531591367767E-003 -3.008918929703261E-003
+ dE/dx -7.263056762103335E-004  3.819749487833588E-003  4.595004201280816E-003
+ dE/dx  3.441355018199346E-003 -1.567584430387935E-003  5.200193021280193E-003
+ dE/dx -7.272828522237363E-004  3.819309490430103E-003 -4.596151239518685E-003
+ dE/dx  3.441788419934391E-003 -1.567961026234938E-003 -5.200027674157551E-003
+ dE/dx -3.352837233460996E-003 -2.027015127013202E-004  5.456036752552905E-003
+ dE/dx -1.137031795177979E-003  3.534341147479357E-003  3.630637692004208E-003
+ dE/dx -3.353311992256764E-003 -2.018249462317831E-004 -5.456988311649003E-003
+ dE/dx -1.137026405735561E-003  3.532812215043857E-003 -3.629462912918530E-003
+ dE/dx  3.171935016456956E-004  5.748702619386677E-004  5.401695106386113E-003
+ dE/dx -6.130222569218284E-004  2.947773633803534E-004  5.652123452691734E-003
+ dE/dx  3.167883907132195E-004  5.749044601278490E-004 -5.401622448039564E-003
+ dE/dx -6.118671726531328E-004  2.953059024718487E-004 -5.651899843101325E-003
+ dE/dx  2.942557037318551E-003 -2.539075473152452E-003  4.592146284007177E-003
+ dE/dx  3.646659339339420E-004  3.764524362086495E-003  5.200921725013082E-003
+ dE/dx  2.941653296706008E-003 -2.539639577556987E-003 -4.593135504298834E-003
+ dE/dx  3.646218397327369E-004  3.764965978257745E-003 -5.200776023134076E-003
+ dE/dx -3.620323192504704E-003 -2.087061340768253E-003  4.370636331448578E-003
+ dE/dx -3.620359550032513E-003 -2.087056568840750E-003 -4.370585407276051E-003
+ dE/dx  3.734694593772839E-003 -3.116654819702050E-004  5.134294406713765E-003
+ dE/dx -1.345370666947466E-003 -5.499781058596917E-004  5.248777176812917E-003
+ dE/dx  3.734742126968547E-003 -3.108091862397344E-004 -5.135385461925618E-003
+ dE/dx -1.345063767641728E-003 -5.504943405187407E-004 -5.249162899106972E-003
+ dE/dx  1.069989867834765E-003  3.857064180796044E-004  4.899311089961281E-003
+ dE/dx  4.329032351000621E-004  8.053233549689768E-004  6.381436706086261E-003
+ dE/dx  1.069348310149469E-003  3.837104220341186E-004 -4.899636811255728E-003
+ dE/dx  4.328134234991214E-004  8.061737618376213E-004 -6.381202885626874E-003
+ dE/dx -1.854164188284360E-003 -2.799708479485190E-003  5.455574776061087E-003
+ dE/dx  2.493260566295041E-003 -2.756576037375316E-003  3.638157841257004E-003
+ dE/dx -1.853708839059678E-003 -2.800606442891171E-003 -5.456506365928943E-003
+ dE/dx  2.491939085645564E-003 -2.755659004805839E-003 -3.636786481904737E-003
+ dE/dx  1.600069024833037E-003  3.390054441447863E-003  5.136577774505954E-003
+ dE/dx -1.146425182439712E-003 -8.905583270919002E-004  5.251021218203689E-003
+ dE/dx  1.601091138639617E-003  3.389604515103616E-003 -5.137753014635717E-003
+ dE/dx -1.147065317353212E-003 -8.901109508099145E-004 -5.251178232222142E-003
+ dE/dx  1.317567697098446E-003  7.583169651483183E-004  4.350658183317566E-003
+ dE/dx -8.264454739727605E-004 -4.763326507795249E-004  5.473354915446572E-003
+ dE/dx  1.318867058953352E-003  7.587370136222094E-004 -4.351538382185553E-003
+ dE/dx -8.258414473745025E-004 -4.757186986280156E-004 -5.472929185060295E-003
+ sigma  9.170644569559089E-002 -5.571851861295816E-002 -1.003719682106328E-007
+ sigma -2.320814962731779E-003  0.107274164803842      -1.744382733049422E-007
+ sigma -3.601042535044323E-008 -3.764144686159503E-008  1.031461959796231E-002
+ kE: -0.400000000000000       0.400000000000000       9.111558166250530E-022
+ E(k) -0.254193770236585     
+ dE/dx  7.783768031955595E-004  4.498415108790547E-004  6.160344131463233E-003
+ dE/dx -6.896355299739168E-004 -3.958648150974158E-004  5.353858230473462E-003
+ dE/dx  7.783167609899571E-004  4.497254049785342E-004 -6.160194282043845E-003
+ dE/dx -6.899226290692657E-004 -3.957621252321896E-004 -5.353621540905664E-003
+ dE/dx  6.741427103312901E-005 -4.798255774938548E-005  6.209623249146827E-003
+ dE/dx -4.290631035821618E-004 -3.688794404849105E-004  4.837319131370291E-003
+ dE/dx  6.909086126775386E-005 -4.925772198769332E-005 -6.209794556638888E-003
+ dE/dx -4.290915997230638E-004 -3.683945157897672E-004 -4.836828613028855E-003
+ dE/dx  3.603498961394584E-004 -2.882981920947097E-004  5.578139762551373E-003
+ dE/dx  2.003417703726318E-004 -5.377602846581916E-004  5.782719859429248E-003
+ dE/dx  3.602732149892262E-004 -2.885044050909405E-004 -5.577981641958034E-003
+ dE/dx  2.012174606632212E-004 -5.372363223061384E-004 -5.782429571344945E-003
+ dE/dx  3.418040753957659E-004  5.091295455560546E-004  4.856654211441764E-003
+ dE/dx  7.682340756134085E-004 -1.089479168464811E-004  6.212718032664124E-003
+ dE/dx  3.399366318228727E-004  5.094244319600064E-004 -4.856866425179446E-003
+ dE/dx  7.687666958454084E-004 -1.093101301129890E-004 -6.212510068009072E-003
+ dE/dx -7.698589001013778E-006  8.113051381558946E-005  6.209693291362612E-003
+ dE/dx -5.350480141306254E-004 -1.843163351124441E-004  4.838233973349340E-003
+ dE/dx -8.152318819806758E-006  8.314711455668332E-005 -6.209891382379752E-003
+ dE/dx -5.342374505624447E-004 -1.845194428033280E-004 -4.837769575313151E-003
+ dE/dx  6.004282678531213E-004  3.466714649260393E-004  5.578865769220009E-003
+ dE/dx -4.290452916678728E-003 -2.475693729017502E-003  3.442449249603699E-003
+ dE/dx  5.983056118467971E-004  3.458709904503280E-004 -5.578923274515682E-003
+ dE/dx -4.288962482433108E-003 -2.474877943269064E-003 -3.440716358359663E-003
+ dE/dx -1.001686927873094E-003  3.578671397243892E-003  5.109138418619614E-003
+ dE/dx  3.449754329473404E-003 -1.770801737992155E-003  5.503751949321362E-003
+ dE/dx -1.002670477618860E-003  3.578250368107938E-003 -5.110261313093172E-003
+ dE/dx  3.450240383677532E-003 -1.771131525951654E-003 -5.503624703898462E-003
+ dE/dx -3.448389617931045E-003 -3.160140271650288E-004  5.624428988815222E-003
+ dE/dx -6.335191837223476E-004  3.880947845262379E-003  3.823048811942063E-003
+ dE/dx -3.448854949027681E-003 -3.151463891350218E-004 -5.625368802325960E-003
+ dE/dx -6.334305643011493E-004  3.879450074282926E-003 -3.821784621621085E-003
+ dE/dx -6.916754029094687E-005  4.577051916219840E-004  5.579864135941548E-003
+ dE/dx -3.659968501818521E-004  4.441704314044349E-004  5.782793969259004E-003
+ dE/dx -6.956047321610575E-005  4.577508852205542E-004 -5.579755279110014E-003
+ dE/dx -3.648726416189234E-004  4.447347996706247E-004 -5.782557209267793E-003
+ dE/dx  2.595858736303548E-003 -2.656662582412377E-003  5.106685995104301E-003
+ dE/dx  1.931207017200326E-004  3.873699376822354E-003  5.504425238167419E-003
+ dE/dx  2.594978223935088E-003 -2.657236784506554E-003 -5.107654055266427E-003
+ dE/dx  1.931452624486988E-004  3.874160045574721E-003 -5.504317045772381E-003
+ dE/dx -3.539373504230194E-003 -2.040475945078076E-003  5.011342005656226E-003
+ dE/dx -3.539323667759754E-003 -2.040426531450605E-003 -5.011428867713367E-003
+ dE/dx  3.653180383901662E-003 -3.894785874646834E-004  5.412657451561772E-003
+ dE/dx -1.009396541526440E-003 -4.244002001231915E-004  5.550894694394339E-003
+ dE/dx  3.653166642951641E-003 -3.886376980435504E-004 -5.413591589019819E-003
+ dE/dx -1.009143351972363E-003 -4.249230619237282E-004 -5.551083306828748E-003
+ dE/dx  6.133906393096366E-004  3.812687649247222E-005  4.856106668007637E-003
+ dE/dx  2.932967491050268E-004  7.191246163978387E-004  6.213991954547404E-003
+ dE/dx  6.128269116333062E-004  3.615955203872490E-005 -4.856399841597350E-003
+ dE/dx  2.932521386264604E-004  7.199598684737011E-004 -6.213770911682784E-003
+ dE/dx -2.000048921732494E-003 -2.825767968477489E-003  5.623804708367008E-003
+ dE/dx  3.045396835916992E-003 -2.494072989428507E-003  3.829850920569423E-003
+ dE/dx -1.999595140183181E-003 -2.826649319919791E-003 -5.624732918959379E-003
+ dE/dx  3.044141165458597E-003 -2.493101029398743E-003 -3.828409485574813E-003
+ dE/dx  1.492221797853646E-003  3.358529013942279E-003  5.414382952198074E-003
+ dE/dx -8.695291146180473E-004 -6.626517394360095E-004  5.552133067575540E-003
+ dE/dx  1.493192125838851E-003  3.358038569089124E-003 -5.415409241151182E-003
+ dE/dx -8.701969963243684E-004 -6.622504564970044E-004 -5.552119839032094E-003
+ dE/dx  9.033133533492876E-004  5.193503330976064E-004  4.534264536569277E-003
+ dE/dx -4.677578354643553E-004 -2.693584866940943E-004  5.422984510470444E-003
+ dE/dx  9.046525167995342E-004  5.197987298797850E-004 -4.534899758684599E-003
+ dE/dx -4.672040354809040E-004 -2.687740266326135E-004 -5.422473302028351E-003
+ sigma  9.068446788205956E-002 -5.389501226174696E-002 -4.193494838497574E-008
+ sigma -1.253825853038932E-003  0.105476947411495      -1.243407453583497E-007
+ sigma -1.984109519274671E-008 -2.853056541077432E-008  1.058676446035636E-002
+ kE: -0.200000000000000       0.400000000000000       4.615350214979350E-022
+ E(k) -0.254183022951255     
+ dE/dx  4.333446081316001E-004 -1.678797428949843E-004  5.576549206688748E-003
+ dE/dx  1.035200287446111E-004  5.545005885216053E-004  4.836213203737807E-003
+ dE/dx  4.331946276065928E-004 -1.680403139789063E-004 -5.576366398745783E-003
+ dE/dx  1.032877758205864E-004  5.544312766544565E-004 -4.835705877441333E-003
+ dE/dx  7.611929075406532E-005 -3.282447284457942E-005  6.209606246152124E-003
+ dE/dx -2.001028856476704E-006  7.921200433685271E-004  5.354761008125391E-003
+ dE/dx  7.760760634716236E-005 -3.438663703346559E-005 -6.209768293482128E-003
+ dE/dx -2.195561609663331E-006  7.926362090310445E-004 -5.354545273640375E-003
+ dE/dx -2.373442772693670E-006 -8.948658908290834E-004  6.162260810892316E-003
+ dE/dx  4.765101451518429E-004 -6.148245001896676E-004  6.213497558078736E-003
+ dE/dx -2.436852484134111E-006 -8.951957254382122E-004 -6.162095254091441E-003
+ dE/dx  4.774652230462530E-004 -6.143158945936104E-004 -6.213206991334231E-003
+ dE/dx -2.690006184460643E-004 -5.484219402058393E-004  4.856426940403062E-003
+ dE/dx  5.634595686580702E-004  9.169882372259952E-005  5.782262874814251E-003
+ dE/dx -2.707604979470862E-004 -5.479796519519534E-004 -4.856643110523792E-003
+ dE/dx  5.639637416201991E-004  9.139183338073175E-005 -5.782009567468289E-003
+ dE/dx  7.103481723009876E-007 -6.909039109520245E-004  5.578396241812342E-003
+ dE/dx -1.080060318207166E-004  5.545492381867320E-004  4.837636032731981E-003
+ dE/dx  1.014934825783468E-007 -6.890129735262260E-004 -5.578459623644587E-003
+ dE/dx -1.073686883129744E-004  5.540585735819810E-004 -4.837194047694384E-003
+ dE/dx -7.277091718132554E-005 -3.189858241687336E-005  6.209673296221730E-003
+ dE/dx -3.677731967217315E-003 -1.388610309451157E-003  3.821161386631168E-003
+ dE/dx -7.489574543943798E-005 -3.291617195926170E-005 -6.209884886005711E-003
+ dE/dx -3.676239166551120E-003 -1.387634493026844E-003 -3.819690735846385E-003
+ dE/dx -1.446122768433600E-003  3.146212199000714E-003  5.623909825087623E-003
+ dE/dx  3.256036484742608E-003 -2.104721460389229E-003  5.504019003895291E-003
+ dE/dx -1.447141986310847E-003  3.145839647946983E-003 -5.625018902956227E-003
+ dE/dx  3.256607358902607E-003 -2.104883663186416E-003 -5.503905834122674E-003
+ dE/dx -3.600695178119579E-003 -9.166533164514577E-004  5.110180393207401E-003
+ dE/dx  2.441521124577960E-006  4.953324753140661E-003  3.444812283794581E-003
+ dE/dx -3.601105526356073E-003 -9.157975032304582E-004 -5.111099948940296E-003
+ dE/dx  2.646457468413024E-006  4.951900011065396E-003 -3.443273603850693E-003
+ dE/dx -4.319449571916544E-004 -1.710310776709764E-004  5.579133489325208E-003
+ dE/dx -1.356545356340029E-004  1.087789651224771E-003  5.550212171495396E-003
+ dE/dx -4.322877631044207E-004 -1.709533459145186E-004 -5.579048268734040E-003
+ dE/dx -1.345755150886280E-004  1.088327229331302E-003 -5.550286348268302E-003
+ dE/dx  2.162805641412529E-003 -2.969610578084291E-003  5.412174288772874E-003
+ dE/dx  2.318793087448502E-007  4.083032767854609E-003  5.012533409192307E-003
+ dE/dx  2.161992210933842E-003 -2.970280609269346E-003 -5.413362530556574E-003
+ dE/dx  3.365752595877783E-007  4.083639718380782E-003 -5.012280493256902E-003
+ dE/dx -3.260645936863243E-003 -2.102332284320520E-003  5.503787181280971E-003
+ dE/dx -3.260510032248445E-003 -2.102116477422781E-003 -5.504018176093113E-003
+ dE/dx  3.597962437165022E-003 -9.209823247349918E-004  5.107025228220017E-003
+ dE/dx -5.669534873810863E-004  9.699546367287467E-005  5.782457418541794E-003
+ dE/dx  3.597839777267849E-003 -9.201455330080218E-004 -5.107739580092752E-003
+ dE/dx -5.667330464258723E-004  9.647354739499361E-005 -5.782380268856115E-003
+ dE/dx  2.220760726661565E-006 -1.043119980364260E-003  4.534328643194823E-003
+ dE/dx  1.350872105255068E-004  1.085012701686835E-003  5.551461333404236E-003
+ dE/dx  1.763521866106109E-006 -1.044976440268708E-003 -4.534926567823274E-003
+ dE/dx  1.350572923884252E-004  1.085763289357017E-003 -5.551493666016048E-003
+ dE/dx -2.163633378154277E-003 -2.969632984466112E-003  5.415138637319886E-003
+ dE/dx  3.680993178243234E-003 -1.392611521441124E-003  3.830259829898599E-003
+ dE/dx -2.163227533035373E-003 -2.970580664997929E-003 -5.416254692917409E-003
+ dE/dx  3.679864552243490E-003 -1.391437666491976E-003 -3.828802453826718E-003
+ dE/dx  1.448803739076173E-003  3.143695283232776E-003  5.623599014921712E-003
+ dE/dx -4.734176451514995E-004 -6.170397994018862E-004  6.214883522372228E-003
+ dE/dx  1.449725633409455E-003  3.143173633696466E-003 -5.624419312652056E-003
+ dE/dx -4.741889721977228E-004 -6.166622784598758E-004 -6.214617534028171E-003
+ dE/dx  2.713966053857257E-004 -5.497752516181099E-004  4.855287656955622E-003
+ dE/dx -8.751450023143494E-007  5.386083773676769E-004  5.422791224074863E-003
+ dE/dx  2.727793651687392E-004 -5.491998980187078E-004 -4.855644133960293E-003
+ dE/dx -3.804381173684670E-007  5.390828775485354E-004 -5.422296495120826E-003
+ sigma  9.196504328819846E-002 -5.165290585905578E-002 -3.562150645150372E-008
+ sigma  3.407964299456630E-005  0.103223875183045       9.715138496706719E-008
+ sigma  2.926596207505003E-009  9.493686012758478E-009  1.058815359335142E-002
+ ------------------------------
+ dECFDM_A
+ -2.260088241002220E-003 -1.310756018651766E-003 -4.728563320739888E-002
+  9.175044393297052E-004  5.132962758989213E-004 -4.022016028584180E-002
+ -2.259356851270012E-003 -1.309527883449128E-003  4.728361041679878E-002
+  9.206916025158763E-004  5.127998973692186E-004  4.021340938107400E-002
+  2.328090915230969E-003 -1.354599900414558E-003 -4.828306983934164E-002
+  1.698035567591863E-005 -1.029366983043716E-003 -4.022193725259027E-002
+  2.314967807253913E-003 -1.342911390456171E-003  4.828128091561711E-002
+  1.872724439268170E-005 -1.034221934447365E-003  4.021572789704884E-002
+  1.920337906578679E-005  2.580229578186844E-003 -4.729044278640787E-002
+ -4.488070814558060E-003  7.422652689329018E-003 -4.695209340480050E-002
+  1.958430404982635E-005  2.582534427151181E-003  4.728913669573315E-002
+ -4.495336478567049E-003  7.417843096679481E-003  4.695188317657750E-002
+  1.473874342399686E-003 -8.622932882353597E-004 -3.882270140150016E-002
+ -8.651964520355899E-003  2.077789315847980E-004 -4.695394813443462E-002
+  1.488625109372407E-003 -8.651349334906634E-004  3.882701265830808E-002
+ -8.655532877772947E-003  2.107370308449237E-004  4.695361511104650E-002
+ -5.621993550559746E-006  2.705933843943091E-003 -4.827595217148208E-002
+ -8.735012892669069E-004  5.105754355258471E-004 -4.022487004921735E-002
+ -3.672925994888119E-007  2.689466089891035E-003  4.827456588462790E-002
+ -8.804759330070859E-004  5.140045127381724E-004  4.021898365539633E-002
+ -2.358556354123602E-003 -1.364192327362514E-003 -4.827334717934478E-002
+  2.972130555117941E-002  1.715088539684068E-002 -2.579236381394318E-002
+ -2.340218406732738E-003 -1.357287824496937E-003  4.827216679144533E-002
+  2.970837927840209E-002  1.714387607703470E-002  2.577987905146894E-002
+  1.027610978361083E-002 -2.855600490636848E-002 -3.891374746780810E-002
+ -2.760591567201908E-002  1.595511619347057E-002 -3.647508768816591E-002
+  1.028480391122508E-002 -2.855319469286634E-002  3.892485770873799E-002
+ -2.761087960964319E-002  1.595756467637374E-002  3.647243589958556E-002
+  2.987263182496758E-002  5.336666660982310E-003 -3.892381833264070E-002
+ -1.715909660222023E-005 -3.431747931897834E-002 -2.581400078625314E-002
+  2.987684440646797E-002  5.329514773961144E-003  3.893307924170736E-002
+ -1.898219864939656E-005 -3.430506203341434E-002  2.580295459498298E-002
+  2.245472252143196E-003 -1.285847637854999E-003 -4.730108061864787E-002
+  4.181886222926797E-003 -7.615285944252264E-003 -4.694816480281268E-002
+  2.249100132084293E-003 -1.286726951231029E-003  4.730034335151373E-002
+  4.172149269730983E-003 -7.619848011783502E-003  4.694843132708305E-002
+ -1.956912719693069E-002  2.317365311459893E-002 -3.889247216258525E-002
+ -2.080324570529369E-006 -3.189260170570898E-002 -3.647893248700099E-002
+ -1.956226842299068E-002  2.317917936145687E-002  3.890224103991507E-002
+ -2.976800028792140E-006 -3.189695580742996E-002  3.647663804076496E-002
+  2.764215312926719E-002  1.593649927772373E-002 -3.647064406944273E-002
+  2.764131127604849E-002  1.593585040065474E-002  3.647098689130629E-002
+ -2.984961854088141E-002  5.371231115551850E-003 -3.889623922322807E-002
+  8.679415263320240E-003  1.662226270976589E-004 -4.694840584164052E-002
+ -2.984945268606398E-002  5.364237152546776E-003  3.890380149918007E-002
+  8.677161619393945E-003  1.710336748384259E-004  4.694970864720875E-002
+ -2.189311110977043E-005  1.732511018695701E-003 -3.881089443369987E-002
+ -4.178246848541088E-003 -7.589251246607712E-003 -4.696407815266410E-002
+ -1.803496075503446E-005  1.748407579931282E-003  3.881612103776174E-002
+ -4.177377668698001E-003 -7.595511061873804E-003  4.696361010087922E-002
+  1.957752390166081E-002  2.317780546322627E-002 -3.891847290005671E-002
+ -2.974121478680315E-002  1.718604053283599E-002 -2.587591693802045E-002
+  1.957390384348774E-002  2.318535690670578E-002  3.892748065414316E-002
+ -2.973132196708145E-002  1.717714286738108E-002  2.586323952350655E-002
+ -1.029969460497512E-002 -2.854002372932864E-002 -3.891129506339434E-002
+  4.461455362021253E-003  7.441892431570870E-003 -4.696221362872426E-002
+ -1.030776036380441E-002 -2.853583859375734E-002  3.891961702969464E-002
+  4.467450599338246E-003  7.438213035837700E-003  4.696172513576365E-002
+ -1.498985624792610E-003 -8.509524596897018E-004 -3.880152808064320E-002
+  9.740291515541651E-006  1.844473512020496E-006 -4.575863801603352E-002
+ -1.510677179898613E-003 -8.550083752400651E-004  3.880739925940183E-002
+  5.692044522450423E-006 -2.727778482725613E-006  4.575620355570038E-002
+ ------------------------------
+ dECFDM_L
+  -7.50876036688695      -1.104088582472809E-004 -5.609348550233941E-007
+ -1.101819891848773E-004  -7.50867257308338      -1.465126255896207E-006
+ -5.492939285345474E-007 -1.467792775416201E-006  -4.12486693653057     
+   1 F= -.56519737E+03 E0= -.56519737E+03  d E =0.000000E+00  mag=    -0.0000
