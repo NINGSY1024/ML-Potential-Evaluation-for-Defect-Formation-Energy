@@ -1,0 +1,52 @@
+variable        simname index Tersoff
+log             ${simname}.log
+units           metal
+atom_style      atomic
+boundary        p p p
+processors		  * * 1
+read_data		    V0.data
+mass            1 12.011
+
+# Define potentials
+pair_style      tersoff
+pair_coeff      * * BNC.tersoff C
+
+
+# Variable 
+variable        thermofrq equal 10
+variable        Nloop equal 100     # number of loop to run
+variable        binding equal pe
+
+
+# Output
+thermo          ${thermofrq}
+thermo_style    custom step temp pe lx ly lz pxx pyy pzz fmax fnorm
+thermo_modify   line one format float %20.16g
+thermo_modify   flush yes norm no lost warn
+
+# Minimize the system in loops
+timestep        1.0e-3
+variable        nr loop ${Nloop}
+label           loopmin
+
+# Minimize the with cg + box/relax
+  fix             frb all box/relax tri 0.0 couple none
+  min_style       cg
+  min_modify      line quadratic
+  minimize        0.0 1.0e-3 10000 10000
+
+# Minimize the with fire
+  unfix           frb
+  min_style       fire
+  minimize        0.0 1.0e-3 10000 10000
+
+next nr
+jump ${simname}.in loopmin
+
+variable        energy equal pe
+fix             output all ave/time 1 1 1 v_energy file ${simname}_energy.data
+dump            dump1 all custom 1 ${simname}.lammpstrj id type x y z fx fy fz
+dump_modify     dump1 sort id
+
+fix             nve all nve
+run             0
