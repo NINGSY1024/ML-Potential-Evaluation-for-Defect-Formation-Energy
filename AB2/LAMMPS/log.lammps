@@ -1,0 +1,4 @@
+LAMMPS (2 Aug 2023)
+variable        simname index ReaxFF
+log             ${simname}.log
+log             ReaxFF.log
