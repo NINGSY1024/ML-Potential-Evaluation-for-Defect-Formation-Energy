@@ -10,9 +10,10 @@ A Python-based evaluation framework for comparing different computational method
   - Classical Force Fields (AIREBO, Tersoff, LCBOP, ReaxFF)
 
 - **Defect Types**:
+  - Pristine (V0)
   - Single Vacancy (V1)
-  - AB-type Defects (ABI, ABII)
-  - AA-type Defects (AAIII)
+  - AB-type Defects (AB1, AB2)
+  - AA-type Defects (AA3)
 
 - **Analysis Tools**:
   - Automated energy calculation
