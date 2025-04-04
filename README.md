@@ -1,11 +1,18 @@
-# ML Potential Evaluation for Defect Formation Energy
+# ML Potential Evaluation for Defect Formation Energy (Defective bilayer graphene system)
 
 A Python-based evaluation framework for comparing different computational methods (DFT, machine learning potentials, and classical force fields) in predicting defect formation energies.
 ## Procedure
 ### Create Training Dataset
 ![Training dataset](/image/Training_Dataset.png)
-### Results
+
+### MD Simulations
+![MD](/image/MD_Simulation.png)
+
+### Force RMSE
 ![Force_RMSE](/image/Force_RMSE.png)
+
+### Defect Formation Energy
+![E_F](/image/Defect_Formation_Energy.png)
 ## Features
 
 - **Multiple Computational Methods Support**:
