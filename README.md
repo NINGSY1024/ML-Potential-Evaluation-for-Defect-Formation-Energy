@@ -3,7 +3,7 @@
 A Python-based evaluation framework for comparing different computational methods (DFT, machine learning potentials, and classical force fields) in predicting defect formation energies.
 ## Procedure
 ### Create Training Dataset
-![Traning dataset](/image/Traing_Dataset.png)
+![Training dataset](/image/Training_Dataset.png)
 ### Results
 ![Force_RMSE](/image/Force_RMSE.png)
 ## Features
