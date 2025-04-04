@@ -4,6 +4,7 @@ A Python-based evaluation framework for comparing different computational method
 ## Procedure
 ### Create Training Dataset
 ![Training dataset](/image/Training_Dataset.png)
+
 **VASP Paramenter Setting**
 V0V0 Bilayers
 1. Binding: AA, AB, SP (2.0 Å - 10.0 Å) (a)
@@ -16,6 +17,7 @@ AA, AB1, AB2 (3.4 Å, 63 atoms) (c)
 AA, AB1, AB2 (2.0, 2.5, 3.0 Å; 62 atoms) (c)
 1. Optimization: extract every step
 2. MD: AIMD (300K, 900K, 1500K)
+3. 
 ### MD Simulations
 ![MD](/image/MD_Simulation.png)
 
