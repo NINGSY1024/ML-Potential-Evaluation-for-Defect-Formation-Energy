@@ -4,7 +4,18 @@ A Python-based evaluation framework for comparing different computational method
 ## Procedure
 ### Create Training Dataset
 ![Training dataset](/image/Training_Dataset.png)
-
+**VASP Paramenter Setting**
+V0V0 Bilayers
+1. Binding: AA, AB, SP (2.0 Å - 10.0 Å) (a)
+2. Sliding: AB-stacked (3.2, 3.4, 3.6 Å) (a)
+3. Deformation: 3% cell, ≤ 0.1 Å atomic shifts (a)
+4. MD: Rebo-ILP (300K - 1500K) (b) o V0V1 Bilayers
+AA, AB1, AB2 (3.4 Å, 63 atoms) (c)
+1. Optimization: extract 1 in 5 steps
+2. MD: AIMD at 300 K o V1V1 Bilayers
+AA, AB1, AB2 (2.0, 2.5, 3.0 Å; 62 atoms) (c)
+1. Optimization: extract every step
+2. MD: AIMD (300K, 900K, 1500K)
 ### MD Simulations
 ![MD](/image/MD_Simulation.png)
 
