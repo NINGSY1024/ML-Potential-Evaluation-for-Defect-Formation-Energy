@@ -1,7 +1,9 @@
 # ML Potential Evaluation for Defect Formation Energy
 
 A Python-based evaluation framework for comparing different computational methods (DFT, machine learning potentials, and classical force fields) in predicting defect formation energies.
-
+## Procedure
+### Create Training Dataset
+![Traning dataset](training%20dataset)
 ## Features
 
 - **Multiple Computational Methods Support**:
